@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+// Import a Google Font
+
+
+// Set your brand colors
+$blue: #004355;
+$grey-light: #AAC3B2;
+
+$primary: $grey-light;
+$footer-background-color: #dce6df;
+
+
+// Import only what you need from Bulma
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+
+//Elementos
+@import "../node_modules/bulma/sass/elements/button.sass";
+@import "../node_modules/bulma/sass/elements/container.sass";
+@import "../node_modules/bulma/sass/elements/content.sass";
+@import "../node_modules/bulma/sass/elements/title.sass";
+@import "../node_modules/bulma/sass/elements/image.sass";
+
+//Forms
+@import "../node_modules/bulma/sass/form/_all.sass";
+
+//Componentes
+@import "../node_modules/bulma/sass/components/navbar.sass";
+@import "../node_modules/bulma/sass/components/card.sass";
+@import "../node_modules/bulma/sass/components/media.sass";
+@import "../node_modules/bulma/sass/components/menu.sass";
+@import "../node_modules/bulma/sass/components/list.sass";
+@import "../node_modules/bulma/sass/components/level.sass";
+
+//Layouts
+@import "../node_modules/bulma/sass/layout/hero.sass";
+@import "../node_modules/bulma/sass/layout/section.sass";
+@import "../node_modules/bulma/sass/layout/footer.sass";
+
+//Grids
+@import "../node_modules/bulma/sass/grid/columns.sass";

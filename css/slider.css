@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Saira|Saira+Condensed&display=swap');
+
+.logo{
+    position: absolute;
+    right: 15%;
+    bottom: 20px;
+    left: 15%;
+    z-index: 10;
+    text-align: center;
+    font-size: 1.9em;
+    font-family: 'saira';
+}
+
+hr, ol{
+    display: none;
+}
+
+.carousel-indicators{
+    bottom: 0px!important;
+}
+
+.slider-img{
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+} 
+
+.logo img{
+    width: 30%;
+    transition: .4s ease;
+}
+
+.logo img:hover{
+    width: 32%;
+}
+
+.tit{
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    transition: 0.4s ease;
+}
+
+.tit:hover{
+    text-shadow: 0 5px 10px rgba(0,0,0,.6);
+    color:white;
+    text-decoration: none;
+}
+
+.plink{
+    font-size: 0.7em;
+}
+
+.plink a{
+    color:white;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    text-decoration: none;
+    transition: 0.4s ease;
+}
+
+.plink a:hover{
+    text-shadow: 0 5px 10px rgba(0,0,0,.6);
+    color:white;
+    text-decoration: none;
+}
+
+.arrow{
+    position:relative;
+    top:43%;
+    display:inline-block;
+    font-family:'Glyphicons Halflings';
+    font-style:normal;
+    font-weight:400;
+    line-height:1;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+@media screen and (min-width: 768px){
+
+.logo {
+    right: 20%;
+    left: 20%;
+    padding-bottom: 5%;
+    font-size: 10em;
+    bottom: 0;
+}
+
+.plink{
+    font-size: 0.4em;
+}
+
+hr, ol{
+    display: block;
+}
+
+.arrow{
+    top:48%;
+}
+
+}
