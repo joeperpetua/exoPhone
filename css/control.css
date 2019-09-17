@@ -1,0 +1,16 @@
+.control {
+    width: 10rem;
+}
+
+.icon{
+    font-size: 3rem;
+    vertical-align: -webkit-baseline-middle;
+}
+
+.blue{
+    color: #024f60;
+}
+
+.green{
+    color: #36cd66;
+}

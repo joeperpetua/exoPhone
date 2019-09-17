@@ -10,14 +10,14 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/cards.css">
 	<link rel="stylesheet" href="css/footer.css">
-	<link rel="stylesheet" href="css/slider.css">
+	<link rel="stylesheet" href="css/filter.css">
 
 	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 <body>
     
     <?php
-        include('include/nav.html');
+        include('include/nav.php');
     ?>
 
     <div class="hero is-medium has-background">
@@ -32,14 +32,21 @@
 
     <section class="section">
 
-        <div class="columns">
+        <div class="columns is-multiline">
 
-            <div class="column is-one-quarter is-hidden-mobile">
+            <div class="column is-full is-hidden-desktop">
+            
+                    
+                <?php
+                    include('php_include/getFiltrosMobile.php');
+                ?>
+            </div>
+
+            <div class="column is-one-quarter is-hidden-touch">
                 <p class="title">Filtros</p>
                 
                 <?php
                     include('php_include/getFiltros.php');
-                    include('php_include/filtros.php');
                 ?>
             
             </div>
@@ -49,7 +56,7 @@
                
                 <div class="columns is-multiline is-centered">
                     <?php
-                        include('php_include/getProducto.php');
+                        include('php_include/filterCard.php');
                     ?>
                 </div>
                 
@@ -63,7 +70,9 @@
         include('include/footer.html');
     ?>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/jquery.localscroll/jquery.localscroll.js"></script>
+    <script src="node_modules/jquery.scrollto/jquery.scrollto.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/nav.js"></script>
 </body>

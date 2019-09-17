@@ -16,13 +16,15 @@
 <body>
 
 <?php
-    include('include/nav.html');
+    include('include/nav.php');
     include('include/slider.html');
     include('include/section.html');
     include('include/footer.html');
 ?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/jquery.localscroll/jquery.localscroll.js"></script>
+<script src="node_modules/jquery.scrollto/jquery.scrollto.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/nav.js"></script>
 <script type="text/javascript" src="js/carousel.js"></script>

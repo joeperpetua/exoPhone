@@ -21,6 +21,7 @@ $footer-background-color: #dce6df;
 @import "../node_modules/bulma/sass/elements/content.sass";
 @import "../node_modules/bulma/sass/elements/title.sass";
 @import "../node_modules/bulma/sass/elements/image.sass";
+@import "../node_modules/bulma/sass/elements/box.sass";
 
 //Forms
 @import "../node_modules/bulma/sass/form/_all.sass";
@@ -32,6 +33,8 @@ $footer-background-color: #dce6df;
 @import "../node_modules/bulma/sass/components/menu.sass";
 @import "../node_modules/bulma/sass/components/list.sass";
 @import "../node_modules/bulma/sass/components/level.sass";
+@import "../node_modules/bulma/sass/components/tabs.sass";
+@import "../node_modules/bulma/sass/components/modal.sass";
 
 //Layouts
 @import "../node_modules/bulma/sass/layout/hero.sass";
@@ -40,3 +43,5 @@ $footer-background-color: #dce6df;
 
 //Grids
 @import "../node_modules/bulma/sass/grid/columns.sass";
+
+//Custom

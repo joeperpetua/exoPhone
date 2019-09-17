@@ -22,4 +22,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  $('#scroll').localScroll({
+    target:'body',
+    duration: 1000,
+    lazy: true
+ });
+
+ 
+
+  
+  $(".payment").click(function() {
+      $(".modal-payment").toggleClass("is-active");
+  });
+
+  $(".payment-bg").click(function() {
+    $(".modal-payment").toggleClass("is-active");
+  });
+
+  $(".shipping").click(function() {
+    $(".modal-shipping").toggleClass("is-active");
+  });
+
+  $(".shipping-bg").click(function() {
+    $(".modal-shipping").toggleClass("is-active");
+  });
+
+
+
+
 });

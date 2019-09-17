@@ -36,7 +36,7 @@
                                                     <span class="icon"><i class="fas fa-cart-plus"></i></span>
                                                     <span>Anadir</span>
                                                 </a>
-                                                <a class="button is-medium is-primary">
+                                                <a class="button is-medium is-primary" href="item.php">
                                                     <span class="icon"><i class="fas fa-ellipsis-h"></i></span>
                                                     <span>Ver mas</span>
                                                 </a>

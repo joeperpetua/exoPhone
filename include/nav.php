@@ -1,7 +1,7 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar" role="navigation" aria-label="main navigation" id="scroll">
 
         <div class="navbar-brand">
-          <a class="navbar-item" href="#">
+          <a class="navbar-item" href="index.php">
             <img src="img/icon.png">
           </a>
   
@@ -15,9 +15,9 @@
       <div class="navbar-menu" id="navMenu">
   
         <div class="navbar-start">
-          <a class="navbar-item">Productos</a>  
-          <a class="navbar-item">Herramienta de selección</a> 
-          <a class="navbar-item">Contacto</a>
+          <a class="navbar-item" href="productos.php">Productos</a>  
+          <a class="navbar-item" href="herramienta.php">Herramienta de selección</a> 
+          <a class="navbar-item" href="#contact">Contacto</a>
           <span class="navbar-item"><input type="text" class="input" placeholder="Buscar producto"></span>
         </div>
   
