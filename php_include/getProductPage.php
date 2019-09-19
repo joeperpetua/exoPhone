@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="hero is-medium has-background">
-          <img src="img/slider2.png" alt="" class="hero-background">
+          <img src="img/slider2.jpg" alt="" class="hero-background">
           <div class="hero-body">
             <div class="container">
               <h2 class="subtitle has-text-white">Los mejores equipos?</h2>
