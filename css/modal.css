@@ -1,0 +1,25 @@
+.modal{
+    display: flex;
+    visibility: hidden;
+    height: 0;
+    opacity: 0;
+}
+
+.modal-card{
+    height: auto;
+    max-height: 75%;
+}
+
+.modal.is-active{
+    visibility: visible;
+    height: auto;
+    opacity: 1;
+    transition: opacity .2s;
+}
+
+.paragraph{
+    text-indent:3%;
+    text-align: justify;
+    text-justify: inter-word;
+    padding: 0 2%;
+}

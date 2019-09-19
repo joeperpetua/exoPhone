@@ -47,7 +47,22 @@ document.addEventListener('DOMContentLoaded', () => {
     $(".modal-shipping").toggleClass("is-active");
   });
 
+  $(".login-btn").click(function() {
+    $(".modal-login").toggleClass("is-active");
+  });
 
+  $(".login-bg").click(function() {
+    $(".modal-login").toggleClass("is-active");
+  });
 
+  $('#tabs li').click(function() {
+    var tab = $(this).data('tab');
+
+    $('#tabs li').removeClass('is-active');
+    $(this).addClass('is-active');
+
+    $('#body div').removeClass('is-active');
+    $('div[data-content="' + tab + '"]').addClass('is-active');
+  });
 
 });

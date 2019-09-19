@@ -23,10 +23,40 @@
   
         <div class="navbar-end">
             <div class="navbar-item">
-               
-              <div class="buttons">
-                <a class="button is-primary"><strong>Registrarse</strong></a>
-                <a class="button is-light">Iniciar Sesión</a>
+
+
+              <a href="" class="button"><i class="fas fa-shopping-cart"></i>&nbsp;Mi carrito</a>
+              &nbsp;
+              <a class="button is-primary login-btn"><i class="fas fa-user"></i>&nbsp;Mi cuenta</a>
+
+              <div class="modal modal-login">
+                <div class="modal-background login-bg"></div>
+                  <div class="modal-card">
+                    <header class="modal-card-head">
+                      <div class="tabs is-toggle" id="tabs">
+                        <ul>
+                          <li class="login-tab is-active" data-tab="1"><a>Iniciar Sesion</a></li>
+                          <li class="signup-tab" data-tab="2"><a>Registrarse</a></li>
+                        </ul>
+                      </div>
+                    </header>
+                    <section class="modal-card-body" id="body">
+                      <div class="container is-active" data-content="1">
+                        <?php
+                          include("php_include/getLogin.php");
+                        ?>
+                      </div>
+
+                      <div class="container" data-content="2">
+                        <?php
+                          include("php_include/getSignup.php");
+                        ?>
+                      </div>
+
+                      
+                    </section>
+                </div>
+              </div>
               </div>
             </div>
         </div>

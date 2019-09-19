@@ -25,49 +25,10 @@
                 
                             <br>       
                             <br>
-                            <div class="columns is-mobile">
-                                <div class="column is-one-fifth">
-                                    <i class="fas fa-credit-card icon blue"></i>
-                                </div>
-                                <div class="column">
-                                    <div class="modal modal-payment">
-                                        <div class="modal-background payment-bg"></div>
-                                        <div class="modal-card">
-                                            <header class="modal-card-head">
-                                                <p class="modal-card-title">Medios de pago</p>
-                                            </header>
-                                            <section class="modal-card-body">
-                                                <h1>Hola</h1>
-                                            </section>
-                                        </div>
-                                    </div>
-                                    <p>Paga hasta en <strong>12 cuotas</strong></p>
-                                    <a class="payment">Ver medios de pago</a>
-                                </div>
-                            </div>
-
-                            <div class="columns is-mobile">
-                                <div class="column is-one-fifth">
-                                    <i class="fas fa-truck icon green"></i>
-                                </div>
-                                <div class="column">
-                                    <div class="modal modal-shipping">
-                                        <div class="modal-background shipping-bg"></div>
-                                        <div class="modal-card">
-                                            <header class="modal-card-head">
-                                                <p class="modal-card-title">Envios</p>
-                                                <button class="modal-close" aria-label="close"></button>
-                                            </header>
-                                            <section class="modal-card-body">
-                                                <h1>Hola</h1>
-                                            </section>
-                                        </div>
-                                    </div>
-                                
-                                    <p>Envios a todo el <strong>pais</strong></p>
-                                    <a class="shipping">Ver informacion de envio</a>
-                                </div>
-                            </div>
+                            
+                            <?php
+                                include("include/modalProduct.html")
+                            ?>
                             
                             <br>
                             <br>
