@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    
     <link rel="stylesheet" href="css/mystyles.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/cards.css">
 	<link rel="stylesheet" href="css/footer.css">
 	<link rel="stylesheet" href="css/filter.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/control.css">
 
 	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>

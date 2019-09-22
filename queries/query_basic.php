@@ -8,7 +8,7 @@ FROM products p
 
 LEFT JOIN dispositives d ON p.id_dispositive = d.id_dispositives
 LEFT JOIN category c ON p.id_cat = c.id_cat
-ORDER BY p.id_product ASC LIMIT 4";
+ORDER BY p.id_product ASC";
 
 
 

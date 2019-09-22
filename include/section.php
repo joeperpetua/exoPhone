@@ -6,7 +6,7 @@
          
           <?php
             
-              include('php_include/getCard.php');
+              include('php_include/getCard/getCardDest.php');
             
           ?>
 
@@ -30,7 +30,7 @@
         
           <?php
             
-              include('php_include/getCard.php');
+              include('php_include/getCard/getCardNew.php');
             
           ?>            
         

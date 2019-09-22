@@ -1,11 +1,25 @@
+<?php
+require('php_config/connect.php');
+require('queries/query_full.php');
+
+$id=$_REQUEST['id'];
+
+$sql_con .= "WHERE id_dispositive = ".$id; 
+$query_full=mysqli_query($connection,$sql_con);
+
+if (mysqli_num_rows($query_full)>0) {
+    while ($query=mysqli_fetch_assoc($query_full)) {
+?>
+
+
 <div>
     <div class="section product-header">
         <div class="container">
             <div class="columns">
                 <div class="column">
-                    <span class="title is-3">{elemento.disp_brand} {elemento.disp_model}</span>
+                    <span class="title is-3"><?php echo $query['disp_brand'].' '.$query['disp_model'];?> </span>
                     <span class="title is-3 has-text-muted">&nbsp;|&nbsp;</span>
-                    <span class="title is-4 has-text-muted">{elemento.cat}</span>
+                    <span class="title is-4 has-text-muted"><?php echo $query['cat'];?></span>
                 </div>
             </div>
         </div>
@@ -16,12 +30,14 @@
             <div class="columns">
                 <div class="column is-6">
                     <div class="image is-2by2">
-                        <img src="imagenes/destacado.png">
+                        <?php
+                            echo '<img src="'.$query['disp_pic'].'" alt="Foto de producto">';
+                        ?>
                     </div>
                 </div>
                 <div class="column is-5 is-offset-1">
-                    <div class="title is-2">{elemento.disp_brand} {elemento.disp_model}</div>
-                        <p class="title is-3 has-text-muted">${elemento.product_price}</p>
+                    <div class="title is-2"><?php echo $query['disp_brand'].' '.$query['disp_model'];?></div>
+                        <p class="title is-3 has-text-muted">$<?php echo $query['product_price'];?></p>
                 
                             <br>       
                             <br>
@@ -78,10 +94,10 @@
                                 <b><li>Datos del dispositivo</li></b>
                             </ul>
                             <ul>
-                                <li>Codigo de modelo: { elemento.disp_code }</li>
-                                <li>S.O: { elemento.disp_so } { elemento.disp_so_version }</li>
-                                <li>Color: { elemento.disp_color }</li>
-                                <li>Anio: { elemento.disp_year }</li>
+                                <li>Codigo de modelo: <?php echo $query['disp_code']; ?></li>
+                                <li>S.O: <?php echo $query['disp_so'].' '.$query['disp_so_version'];?> </li>
+                                <li>Color: <?php echo $query['disp_color']; ?></li>
+                                <li>Anio: <?php echo $query['disp_year']; ?></li>
                             </ul>
 
                                 <br>
@@ -89,9 +105,9 @@
                                 <b><li>Unidades de procesamiento</li></b>
                                 </ul>
                                 <ul>
-                                    <li>CPU: { elemento.cpu_brand } { elemento.cpu_model }</li>
-                                    <li>Nucleos: { elemento.cpu_cores }</li>
-                                    <li>GPU: { elemento.gpu_brand } { elemento.gpu_model }</li>
+                                    <li>CPU: <?php echo $query['cpu_brand'].' '.$query['cpu_model'];?> </li>
+                                    <li>Nucleos: <?php echo $query['cpu_cores']; ?></li>
+                                    <li>GPU: <?php echo $query['gpu_brand'].' '.$query['gpu_model'];?> </li>
                                 </ul>
 
                                 <br>
@@ -99,10 +115,10 @@
                                 <b><li>Pantalla</li></b>
                                 </ul>
                                 <ul>
-                                    <li>Tamanio: { elemento.screen_size }"</li>
-                                    <li>Resolucion: { elemento.screen_reso }</li>
-                                    <li>Tipo: { elemento.screen_type }</li>
-                                    <li>Relacion aspecto: { elemento.screen_aspect_ratio }</li>
+                                    <li>Tamanio: <?php echo $query['screen_size']; ?>"</li>
+                                    <li>Resolucion: <?php echo $query['screen_reso']; ?></li>
+                                    <li>Tipo: <?php echo $query['screen_type']; ?></li>
+                                    <li>Relacion aspecto: <?php echo $query['screen_aspect_ratio']; ?></li>
                                 </ul>
 
                                 <br>
@@ -110,9 +126,9 @@
                                 <b><li>Memoria</li></b>
                                 </ul>
                                 <ul>
-                                    <li>Ram: { elemento.ram_size }GB</li>
-                                    <li>Rom: { elemento.rom_size }GB</li>
-                                    <li>SD (max): { elemento.sd_size }GB</li>
+                                    <li>Ram: <?php echo $query['ram_size']; ?>GB</li>
+                                    <li>Rom: <?php echo $query['rom_size']; ?>GB</li>
+                                    <li>SD (max): <?php echo $query['sd_size']; ?>GB</li>
                                 </ul>
 
                                 <br>
@@ -120,10 +136,21 @@
                                 <b><li>Bateria</li></b>
                                 </ul>
                                 <ul>
-                                    <li>Tipo: { elemento.battery_type }</li>
-                                    <li>Capacidad: { elemento.battery_capacity }mAh</li>
-                                    <li>Carga rapida: { elemento.battery_qc }</li>
-                                    <li>Carga inalambrica: { elemento.battery_wc }</li>
+                                    <li>Tipo: <?php echo $query['battery_type']; ?></li>
+                                    <li>Capacidad: <?php echo $query['battery_capacity']; ?>mAh</li>
+                                    <li>Carga rapida: <?php echo $query['battery_qc']; ?></li>
+                                    <li>Carga inalambrica: <?php echo $query['battery_wc']; ?></li>
+                                </ul>
+
+                                <br>
+                                <ul>
+                                <b> <li>Extras</li></b>
+                                </ul>
+                                <ul>
+                                    <li>Lector dactilar: <?php echo $query['fingerprint_type']; ?></li>
+                                    <li>Audio: <?php echo $query['speaker_type']; ?></li>
+                                    <li>Resistencia al agua: <?php echo $query['water_resistant_grade']; ?></li>
+                                    <li>Jack 3.5mm: <?php echo $query['has_headphone_jack']; ?></li>
                                 </ul>
                         </div>
                     
@@ -133,31 +160,22 @@
                                 <b><li>Conectividad</li></b>
                             </ul>
                             <ul>
-                                <li>Tipo SIM: { elemento.sim_type }</li>
-                                <li>Tipo USB: { elemento.usb_type }</li>
-                                <li>NFC: { elemento.has_nfc }</li>
-                                <li>IRC: { elemento.has_irc }</li>
-                                <li>LTE: { elemento.has_lte }</li>
+                                <li>Tipo SIM: <?php echo $query['sim_type']; ?></li>
+                                <li>Tipo USB: <?php echo $query['usb_type']; ?></li>
+                                <li>NFC: <?php echo $query['has_nfc']; ?></li>
+                                <li>IRC: <?php echo $query['has_irc']; ?></li>
+                                <li>LTE: <?php echo $query['has_lte']; ?></li>
                             </ul>
-
                             <br>
+                            
                             <ul>
                             <b> <li>Camaras</li></b>
+        
                             </ul>
-                            <ul>
-                                <li>{ elemento.a }</li>
-                            </ul>
+                            
+                            <?php include('php_include/getCam.php');?>
 
-                            <br>
-                            <ul>
-                            <b> <li>Extras</li></b>
-                            </ul>
-                            <ul>
-                                <li>Lector dactilar: { elemento.fingerprint_type }</li>
-                                <li>Audio: { elemento.speaker_type }</li>
-                                <li>Resistencia al agua: { elemento.water_resistant_grade }</li>
-                                <li>Jack 3.5mm: { elemento.has_headphone_jack }</li>
-                            </ul>
+                            
                         </div>
 
                 </div>
@@ -168,3 +186,9 @@
 </div>
                   
                    
+<?php
+        }
+    }else{
+        echo 'Error al cargar el producto';
+    }
+?>

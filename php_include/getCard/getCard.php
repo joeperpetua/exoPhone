@@ -53,14 +53,19 @@ require('queries/query_preview.php');
 
                                 <footer class="card-footer">
                                             <div class="buttons is-centered">
-                                                <a class="button is-medium">
-                                                    <span class="icon"><i class="fas fa-cart-plus"></i></span>
-                                                    <span>Anadir</span>
-                                                </a>
-                                                <a class="button is-medium is-primary" href="item.php">
-                                                    <span class="icon"><i class="fas fa-ellipsis-h"></i></span>
-                                                    <span>Ver mas</span>
-                                                </a>
+                                                <?php echo '
+                                                    <a class="button is-medium">
+                                                        <span class="icon"><i class="fas fa-cart-plus"></i></span>
+                                                        <span>Anadir</span>
+                                                    </a>';
+                                                ?>
+
+                                                <?php echo'
+                                                    <a class="button is-medium is-primary" href="item.php?id='.$query['id_dispositive'].'">
+                                                        <span class="icon"><i class="fas fa-ellipsis-h"></i></span>
+                                                        <span>Ver mas</span>
+                                                    </a>';
+                                                ?>
                                             </div>
                                             </footer>
                             </div>         
