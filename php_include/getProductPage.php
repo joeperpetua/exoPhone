@@ -16,7 +16,7 @@
             <div class="columns">
                 <div class="column is-6">
                     <div class="image is-2by2">
-                        <img src="img/destacado.png">
+                        <img src="imagenes/destacado.png">
                     </div>
                 </div>
                 <div class="column is-5 is-offset-1">
@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="hero is-medium has-background">
-          <img src="img/slider2.jpg" alt="" class="hero-background">
+          <img src="imagenes/slider2.jpg" alt="" class="hero-background">
           <div class="hero-body">
             <div class="container">
               <h2 class="subtitle has-text-white">Los mejores equipos?</h2>

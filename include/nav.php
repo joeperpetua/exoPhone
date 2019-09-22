@@ -2,7 +2,7 @@
 
         <div class="navbar-brand">
           <a class="navbar-item" href="index.php">
-            <img src="img/icon.png">
+            <img src="imagenes/icon.png">
           </a>
   
           <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">

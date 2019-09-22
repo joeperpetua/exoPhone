@@ -29,3 +29,24 @@ article{
   .hero-background.is-transparent {
     opacity: 0.3;
   }
+
+  .card-title, .card-footer{
+    width: 300px;
+    border: none;
+  }
+
+  .card {
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    max-width: 350px;
+  }
+
+  .card-footer {
+    margin: 0 auto;
+    margin-top: auto;
+  }
+
+  .card-footer .buttons{
+    margin: 0 auto;
+  }

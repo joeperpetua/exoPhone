@@ -7,11 +7,11 @@
 	
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/mystyles.css">
-	<link rel="stylesheet" href="css/cards.css">
 	<link rel="stylesheet" href="css/footer.css">
 	<link rel="stylesheet" href="css/slider.css">
 	<link rel="stylesheet" href="css/login.css">
 	<link rel="stylesheet" href="css/modal.css">
+	<link rel="stylesheet" href="css/cards.css">
 
 	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
@@ -20,7 +20,7 @@
 <?php
     include('include/nav.php');
     include('include/slider.html');
-    include('include/section.html');
+    include('include/section.php');
     include('include/footer.html');
 ?>
 

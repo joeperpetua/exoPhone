@@ -1,9 +1,23 @@
+<?php
+require('php_config/connect.php');
+require('queries/query_preview.php');
+?>
+
+<?php 
+    if (mysqli_num_rows($query_preview)>0) {
+        while ($query=mysqli_fetch_assoc($query_preview)) {
+?>
+
+
 <div class="column id-1 is-narrow">
                             <div class="card">
 
                                 <div class="card-image">
-                                <figure class="image is-4by3">
-                                        <img src="img/destacado.png" alt="Placeholder image">
+                                <figure class="image is-200x200" style="margin: 0 auto">
+                                    <?php
+                                        echo '<img src="'.$query['disp_pic'].'" alt="Foto de producto">';
+                                    ?>
+                                    
                                 </figure>
                                 </div>
                                 
@@ -11,7 +25,7 @@
                                     
                                     <div class="media">
                                         <div class="media-content">
-                                        <p class="title is-10">Samsung Galaxy S10</p>
+                                        <p class="title card-title"><?php echo $query['disp_brand'].' '.$query['disp_model']; ?></p>
                                         </div>
                                     </div>
                                 
@@ -19,18 +33,25 @@
                                             <p class="lead"><strong>Especificaciones</strong></p>
                                             <ul>
                                                 <li>
-                                                    <p>{item.cpu_brand} {item.cpu_model}</p>
+                                                    <p><?php echo $query['cpu_brand'].' '.$query['cpu_model']; ?></p>
                                                 </li>
                                                 <li>
-                                                    <p>{item.rom_size}GB ROM</p>
+                                                    <p><?php echo $query['rom_size']; ?>GB ROM</p>
                                                 </li>
                                                 <li>
-                                                    <p>{item.ram_size}GB RAM</p>
+                                                    <p><?php echo $query['ram_size']; ?>GB RAM</p>
                                                 </li>
                                                 <li>
-                                                    <p>{item.battery_capacity}mAh</p>
+                                                    <p><?php echo $query['cat']; ?></p>
                                                 </li>
                                             </ul>
+
+                                            
+                                            
+                                    </div>
+                                </div>
+
+                                <footer class="card-footer">
                                             <div class="buttons is-centered">
                                                 <a class="button is-medium">
                                                     <span class="icon"><i class="fas fa-cart-plus"></i></span>
@@ -41,7 +62,12 @@
                                                     <span>Ver mas</span>
                                                 </a>
                                             </div>
-                                    </div>
-                                </div>
+                                            </footer>
                             </div>         
                     </div>
+<?php
+        }
+    }else{
+        echo 'No hay productos disponibles';
+    }
+?>
