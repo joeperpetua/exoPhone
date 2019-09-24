@@ -1,0 +1,72 @@
+html{
+    overflow: hidden;
+}
+
+.abm{
+    width: 95%;
+    margin: 0 auto;
+}
+
+.tabs{
+    margin: 0 auto;
+    max-width: fit-content;
+}
+
+hr{
+    height: 0;
+}
+
+.box{
+    max-height: 70vh;
+    overflow: auto;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.columns{
+    overflow: auto;
+}
+
+.card{
+    max-width: 100%;
+}
+
+.card p{
+    max-width: 130px;
+}
+
+.back{
+    position: absolute;
+    top: 4%;
+}
+
+.send{
+    position: absolute;
+    right: 10%;
+    top: 4%;
+}
+
+
+.container{
+    transition: opacity 1s ease, visibility 0s;
+    opacity: 0; 
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+}
+
+.container.is-active{
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+}
+
+@media screen and (min-width: 768px){
+    .box, .abm{
+        width: 60%;
+    }
+
+    .card p{
+        max-width: 100%;
+    }
+}

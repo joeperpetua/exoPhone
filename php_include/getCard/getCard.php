@@ -1,9 +1,7 @@
 <?php
 require('php_config/connect.php');
 require('queries/query_preview.php');
-?>
 
-<?php 
     if (mysqli_num_rows($query_preview)>0) {
         while ($query=mysqli_fetch_assoc($query_preview)) {
 ?>

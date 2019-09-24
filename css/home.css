@@ -1,0 +1,8 @@
+.column{
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.media-content{
+    overflow: unset;
+}
