@@ -30,13 +30,13 @@
     <div class="box" id="body">
         <div class="columns is-multiline" style="overflow: auto; max-height: 100%;">
 
-        <div class="container is-active" data-content="1">
+        <div class="column is-full container is-active" data-content="1">
             <?php
                 include('php_include/abm/getItemABM.php');
             ?>
         </div>
 
-        <div class="container" data-content="2">
+        <div class="column is-full container" data-content="2">
             <?php
                 include('php_include/abm/getUserABM.php');
             ?>

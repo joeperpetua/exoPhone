@@ -1,4 +1,4 @@
-<nav class="navbar" role="navigation" aria-label="main navigation" id="scroll">
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation" id="scroll">
 
         <div class="navbar-brand">
           <a class="navbar-item" href="index.php">
