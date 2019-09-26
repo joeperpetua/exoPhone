@@ -10,7 +10,7 @@ require('queries/query_basic.php');
 
 <div class="column is-full card">
     <span>
-        <p class="is-pulled-left"><?php echo $query['disp_brand']. ' ' .$query['disp_model'];?></p>
+        <a href="view.php?id=<?php echo $query['id_dispositive'];?>" class="is-pulled-left"><?php echo $query['disp_brand']. ' ' .$query['disp_model'];?></a>
             <span class="is-pulled-right">
                 <a href="modify.php?id=<?php echo $query['id_dispositive'];?>" class="button is-rounded"><i class="fas fa-pen"></i></a>
                 &nbsp;

@@ -118,7 +118,7 @@ if (mysqli_num_rows($query_full)>0) {
                 <p class="title">Cámaras</p> 
 
                 <?php
-                    include('php_include/getCamForm.php');
+                    include('php_include/abm/getCamForm.php');
                 ?>
             </div>
 

@@ -15,37 +15,31 @@
 </head>
 <body>
 
-<?php
-    include('include/nav.php');
-?>
-
 <section class="section">
-    <p class="title abm">ABM <a href="add_product.php" class="button is-pulled-right"><i class="fas fa-plus"></i></a></p>
+    <a href="abm.php" class="button back">Volver a la lista </a>
+    <hr>
     <div class="tabs is-toggle" id="tabs">
         <ul>
-            <li class="is-active" data-tab="1"><a>Equipos</a></li>
-            <li data-tab="2"><a>Usuarios</a></li>
+            <li class="is-active" data-tab="1"><a>Dispositivo</a></li>
+            <li data-tab="2"><a>XPU</a></li>
+            <li data-tab="3"><a>Memoria</a></li>
+            <li data-tab="4"><a>Pantalla</a></li>
+            <li data-tab="5"><a>Bateria</a></li>
+            <li data-tab="6"><a>Conectividad</a></li>
+            <li data-tab="7"><a>Extras</a></li>
+            <li data-tab="8"><a>Camaras</a></li>
+            <li data-tab="9"><a>Categoria</a></li>
+            <li data-tab="10"><a>Producto</a></li>
         </ul>
     </div>
-    <div class="box" id="body">
-        <div class="columns is-multiline" style="overflow: auto; max-height: 100%;">
-
-        <div class="container is-active" data-content="1">
+    <div class="box">
+        <div class="columns is-multiline is-centered" style="overflow: auto; max-height: 100%;">
+            
             <?php
-                include('php_include/abm/getItemABM.php');
+                include('php_include/abm/getView.php');
             ?>
-        </div>
-
-        <div class="container" data-content="2">
-            <?php
-                include('php_include/abm/getUserABM.php');
-            ?>
-        </div>
             
-            
-            
-        </div>
-    </div>
+        
 
 </section>
 
@@ -55,6 +49,7 @@
 <script src="node_modules/jquery.localscroll/jquery.localscroll.js"></script>
 <script src="node_modules/jquery.scrollto/jquery.scrollto.js"></script>
 <script type="text/javascript" src="js/nav.js"></script>
+<script type="text/javascript" src="js/tabs.js"></script>
 
 </body>
 </html>

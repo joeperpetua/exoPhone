@@ -29,9 +29,10 @@ hr{
 
 .card{
     max-width: 100%;
+    height: auto;
 }
 
-.card p{
+.card a{
     max-width: 130px;
 }
 
@@ -66,7 +67,7 @@ hr{
         width: 60%;
     }
 
-    .card p{
+    .card a{
         max-width: 100%;
     }
 }
