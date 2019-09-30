@@ -2,6 +2,10 @@ html{
     overflow: hidden;
 }
 
+.section{
+    padding: 4rem 1.5rem;
+}
+
 .abm{
     width: 95%;
     margin: 0 auto;

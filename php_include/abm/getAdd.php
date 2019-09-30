@@ -127,13 +127,13 @@
                     
                 </div> -->
                 <ul>
-                    <li><label><input type="radio" value="Necesidades Basicas" name="category"> Necesidades básicas</label></li><br>
-                    <li><label><input type="radio" value="Redes Sociales" name="category"> Redes Sociales</label></li><br>
-                    <li><label><input type="radio" value="Trabajo de Oficina" name="category"> Trabajo de oficina</label></li><br>
-                    <li><label><input type="radio" value="Dibujo" name="category"> Dibujo</label></li><br>
-                    <li><label><input type="radio" value="Edicion" name="category"> Edición</label></li><br>
-                    <li><label><input type="radio" value="Gaming" name="category"> Gaming</label></li><br>
-                    </ul>
+                    <li><label class="radio"><input type="radio" value="Necesidades basicas" name="category"> Necesidades básicas</label></li><br>
+                    <li><label class="radio"><input type="radio" value="Redes sociales" name="category"> Redes Sociales</label></li><br>
+                    <li><label class="radio"><input type="radio" value="Trabajo de oficina" name="category"> Trabajo de oficina</label></li><br>
+                    <li><label class="radio"><input type="radio" value="Dibujo" name="category"> Dibujo</label></li><br>
+                    <li><label class="radio"><input type="radio" value="Edicion" name="category"> Edición</label></li><br>
+                    <li><label class="radio"><input type="radio" value="Gaming" name="category"> Gaming</label></li><br>
+                </ul>
                 
             </div>
 

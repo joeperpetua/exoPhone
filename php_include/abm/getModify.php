@@ -4,11 +4,12 @@ require('queries/query_full.php');
 
 $id=$_REQUEST['id'];
 
-$sql_con .= "WHERE id_dispositive = ".$id; 
+$sql_con .= "WHERE id_product = ".$id; 
 $query_full=mysqli_query($connection,$sql_con);
 
 if (mysqli_num_rows($query_full)>0) {
     while ($query=mysqli_fetch_assoc($query_full)) {
+        $target_file = $query['disp_pic'];
 ?>
 
 
@@ -125,16 +126,49 @@ if (mysqli_num_rows($query_full)>0) {
             <div class="container" data-content="9">
                 
             <p class="title">CATEGORIA</p>
-                <div class="select">
-                    <select>
-                        <option value="Necesidades Basicas" name="category"> Necesidades básicas</option>
-                        <option value="Redes Sociales" name="category"> Redes Sociales</option>
-                        <option value="Trabajo de Oficina" name="category">Trabajo de oficina</option>
-                        <option value="Dibujo" name="category">Dibujo</option>
-                        <option value="Edicion" name="category">Edicion</option>
-                        <option value="Gaming" name="category">Gaming</option>
-                    </select>
-                </div>
+
+                <?php
+                    $cat1 = "";
+                    $cat2 = "";
+                    $cat3 = "";
+                    $cat4 = "";
+                    $cat5 = "";
+                    $cat6 = "";
+                    switch ($query['cat']) {
+                        case 'Necesidades basicas':
+                            $cat1 = "checked";
+                            break;
+                        
+                        case 'Redes sociales':
+                            $cat2 = "checked";
+                            break;
+
+                        case 'Trabajo de oficina':
+                            $cat3 = "checked";
+                            break;
+
+                        case 'Dibujo':
+                            $cat4 = "checked";
+                            break;
+
+                        case 'Edicion':
+                            $cat5 = "checked";
+                            break;
+
+                        case 'Gaming':
+                            $cat6 = "checked";
+                            break;
+                    }
+                ?>
+
+                <ul>
+                    <li><label class="radio"><input type="radio" value="Necesidades basicas" name="category" <?php echo $cat1; ?> > Necesidades básicas</label></li><br>
+                    <li><label class="radio"><input type="radio" value="Redes sociales" name="category" <?php echo $cat2; ?> > Redes Sociales</label></li><br>
+                    <li><label class="radio"><input type="radio" value="Trabajo de oficina" name="category" <?php echo $cat3; ?> > Trabajo de oficina</label></li><br>
+                    <li><label class="radio"><input type="radio" value="Dibujo" name="category" <?php echo $cat4; ?> > Dibujo</label></li><br>
+                    <li><label class="radio"><input type="radio" value="Edicion" name="category" <?php echo $cat5; ?> > Edición</label></li><br>
+                    <li><label class="radio"><input type="radio" value="Gaming" name="category" <?php echo $cat6; ?> > Gaming</label></li><br>
+                </ul>
                     
                 
             </div>
