@@ -36,10 +36,23 @@
             ?>
         </div>
 
-        <div class="column is-full container" data-content="2">
-            <?php
-                include('php_include/abm/getUserABM.php');
-            ?>
+        <div class="is-full container" data-content="2">
+            <table class="table is-fullwidth is-striped is-hoverable">
+                <thead>
+                    <tr>
+                        <th>Nombre de usuario</th>
+                        <th>Correo</th>
+                        <th>Fecha de registro</th>
+                        <th>Ultima conexion</th>
+                        <th>Verificacion</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                        <?php include('php_include/abm/getUserABM.php'); ?>
+                </tbody>
+            </table>
+            
         </div>
             
             

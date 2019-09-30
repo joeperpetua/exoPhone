@@ -7,17 +7,13 @@ require('queries/query_user.php');
 ?>
 
 
-
-<div class="column is-full card">
-    <span>
-        <a href="user_view.php?id=<?php echo $query_u['id_user'];?>" class="is-pulled-left"><?php echo $query_u['usuario'] .' ('. $query_u['email'] .')';?></a>
-            <span class="is-pulled-right">
-                <a href="user_modify.php?id=<?php echo $query_u['id_user'];?>" class="button is-rounded"><i class="fas fa-pen"></i></a>
-                &nbsp;
-                <a href="" class="button is-rounded"><i class="fas fa-trash-alt"></i></a>
-            </span>
-    </span>
-</div>
+<tr>
+    <th><p> <?php echo $query_u['usuario'];?> </p> </th>
+    <th><p> <?php echo $query_u['email'];?> </p></th>
+    <th><p> <?php echo $query_u['fecha_registro'];?> </p></th>
+    <th><p> <?php echo $query_u['ultima_conexion'];?> </p></th>
+    <th><p> <?php echo $query_u['verificado'];?> </p></th>
+</tr>
 
 <?php
         }
