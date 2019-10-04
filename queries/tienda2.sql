@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2019 at 11:19 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.4
+-- Generation Time: Oct 04, 2019 at 09:56 PM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.1.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -47,7 +47,9 @@ INSERT INTO `batteries` (`id_battery`, `battery_type`, `battery_capacity`, `batt
 (4, 'Li-Ion', '2658', 'Si', 'Si'),
 (5, 'Li-Po', '3500', 'No', 'No'),
 (6, 'Li-Po', '4000', 'Si', 'No'),
-(7, 'Li-Ion', '3110', 'Si', 'Si');
+(7, 'Li-Ion', '3110', 'Si', 'Si'),
+(8, 'Li-Po', '4000', 'Si', 'No'),
+(9, 'Li-Po', '2915', 'Si', 'Si');
 
 -- --------------------------------------------------------
 
@@ -65,13 +67,15 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id_cat`, `cat`) VALUES
-(1, 'Trabajo de Oficina'),
+(1, 'Trabajo de oficina'),
 (2, 'Dibujo'),
-(3, 'Redes Sociales'),
+(3, 'Redes sociales'),
 (4, 'Trabajo de oficina'),
 (5, 'Necesidades basicas'),
-(6, 'Redes Sociales'),
-(7, 'Trabajo de Oficina');
+(6, 'Redes sociales'),
+(7, 'Trabajo de oficina'),
+(8, 'Gaming'),
+(9, 'Trabajo de oficina');
 
 -- --------------------------------------------------------
 
@@ -99,7 +103,9 @@ INSERT INTO `connectivity` (`id_connectivity`, `sim_type`, `usb_type`, `has_nfc`
 (4, 'Nano SIM / eSIM', 'Lighting', 'No', 'No', 'Si'),
 (5, 'nanoSIM', 'microUSB', 'No', 'No', 'Si'),
 (6, 'nanoSIM', 'USB C', 'No', 'No', 'Si'),
-(7, 'nanoSIM', 'Lighting', 'Si', 'No', 'Si');
+(7, 'nanoSIM', 'Lighting', 'Si', 'No', 'Si'),
+(8, 'nanoSIM', 'Tipo C', 'Si', 'No', 'Si'),
+(9, 'nanoSIM', 'Tipo C', 'Si', 'No', 'Si');
 
 -- --------------------------------------------------------
 
@@ -130,7 +136,9 @@ INSERT INTO `dispositives` (`id_dispositives`, `disp_brand`, `disp_model`, `disp
 (4, 'Apple', 'iPhone XS', 'A2097', 'iOS', '12', '2018', 'Gris', 'imagenes/productos/iphone-xs-space-select-2018.png'),
 (5, 'LG', 'K50', 'LMX520BMW', 'Android', '9.0', '2019', 'Negro', 'imagenes/productos/lg-k50-.jpg'),
 (6, 'Honor', '9X Pro', 'HLK-AL10', 'Android', '9.0', '2019', 'Purpura', 'imagenes/productos/honor-9x-pro.jpg'),
-(7, 'Apple', 'iPhone 11', 'A2221', 'iOS', '13.0', '2019', 'Blanco', 'imagenes/productos/iphone-11.jpg');
+(7, 'Apple', 'iPhone 11', 'A2221', 'iOS', '13.0', '2019', 'Blanco', 'imagenes/productos/iphone-11.jpg'),
+(8, 'OnePlus', '7 Pro', 'GM1911', 'Android', '9.0', '2019', 'Azul', 'imagenes/productos/oneplus-7-pro.jpg'),
+(9, 'Google', 'Pixel 3', 'Pixel 3', 'Android', '9.0 (actualizable a 10)', '2018', 'Negro', 'imagenes/productos/pixel3.jpg');
 
 -- --------------------------------------------------------
 
@@ -157,7 +165,9 @@ INSERT INTO `extras` (`id_extras`, `fingerprint_type`, `speaker_type`, `water_re
 (4, 'Fisico', 'Stereo', 'Si', 'No'),
 (5, 'Fisico', 'Mono', 'No', 'Si'),
 (6, 'Fisico (lateral)', 'Mono', 'No', 'Si'),
-(7, 'No', 'Stereo', 'IP68', 'No');
+(7, 'No', 'Stereo', 'IP68', 'No'),
+(8, 'Optico (en pantalla)', 'Estereo', 'No', 'No'),
+(9, 'Fisico (trasero)', 'Estereo', 'No', 'No');
 
 -- --------------------------------------------------------
 
@@ -186,7 +196,7 @@ INSERT INTO `lens` (`id_lens`, `lens_type`, `lens_mp`, `lens_recording`, `lens_u
 (5, 'Wide', '12', '2160p@30/60fps, 1080p@30/60/240fps, 720p@960fps', 'Trasera', 2),
 (6, 'Ultra Wide', '16', '2160p@30/60fps, 1080p@30/60/240fps, 720p@960fps', 'Trasera', 2),
 (7, 'Telephoto', '12', '2160p@30/60fps, 1080p@30/60/240fps, 720p@960fps', 'Trasera', 2),
-(8, 'Wide', '10', '2160p@30fps, 1080p@30fps', 'Frontal', 2),
+(8, 'Wide', '16', '1080p@30fps', 'Frontal (motorizada)', 8),
 (9, 'Wide', '48', '1080p@30/60/120fps', 'Trasera', 3),
 (10, 'Sensor de profundidad', '5', '-', 'Trasera', 3),
 (11, 'Estandar', '13', '1080p@30fps', 'Frontal', 3),
@@ -203,7 +213,14 @@ INSERT INTO `lens` (`id_lens`, `lens_type`, `lens_mp`, `lens_recording`, `lens_u
 (22, 'Wide', '12', '2160p@24/30/60fps, 1080p@30/60/120/240fps, HDR', 'Trasera', 7),
 (23, 'Ultra Wide', '12', '2160p@24/30/60fps, 1080p@30/60/120/240fps, HDR', 'Trasera', 7),
 (24, 'Wide', '12', '2160p@24/30/60fps, 1080p@30/60/120fps', 'Frontal', 7),
-(25, 'TOF 3D', '0', '-', 'Frontal', 7);
+(25, 'TOF 3D', '0', '-', 'Frontal', 7),
+(26, 'Wide', '48', '2160p@30/60fps, 1080p@30/60/240fps, 720p@480fps, Auto HDR', 'Trasera', 8),
+(27, 'Telephoto', '8', '2160p@30/60fps, 1080p@30/60/240fps, 720p@480fps, Auto HDR', 'Trasera', 8),
+(28, 'UltraWide', '16', '-', 'Trasera', 8),
+(29, 'Wide', '16', '1080p@30fps', 'Frontal (motorizada)', 8),
+(30, 'Wide', '12', '2160p@30fps, 1080p@30/60/120fps, 720p@240fps, 1080p@30fps (gyro-EIS)', 'Trasera', 9),
+(31, 'Wide', '8', '1080p@30fps', 'Frontal', 9),
+(32, 'UltraWide', '8', '1080p@30fps', 'Frontal', 9);
 
 -- --------------------------------------------------------
 
@@ -229,7 +246,9 @@ INSERT INTO `memories` (`id_memory`, `ram_size`, `rom_size`, `sd_size`) VALUES
 (4, '4', '64', '0'),
 (5, '3', '32', '1000'),
 (6, '8', '128', '512'),
-(7, '4', '256', '0');
+(7, '4', '256', '0'),
+(8, '12', '256', '0'),
+(9, '4', '128', '0');
 
 -- --------------------------------------------------------
 
@@ -248,21 +267,24 @@ CREATE TABLE `products` (
   `id_extras` int(11) NOT NULL,
   `id_cat` int(11) NOT NULL,
   `product_stock` int(11) NOT NULL,
-  `product_price` int(11) NOT NULL
+  `product_price` int(11) NOT NULL,
+  `listed` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id_product`, `id_dispositive`, `id_xpu`, `id_memory`, `id_screen`, `id_battery`, `id_connectivity`, `id_extras`, `id_cat`, `product_stock`, `product_price`) VALUES
-(1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 54000),
-(2, 2, 2, 2, 2, 2, 2, 2, 2, 50, 67000),
-(3, 3, 3, 3, 3, 3, 3, 3, 3, 150, 14000),
-(4, 4, 4, 4, 4, 4, 4, 4, 4, 250, 96000),
-(5, 5, 5, 5, 5, 5, 5, 5, 5, 200, 14000),
-(6, 6, 6, 6, 6, 6, 6, 6, 6, 50, 21500),
-(7, 7, 7, 7, 7, 7, 7, 7, 7, 90, 110000);
+INSERT INTO `products` (`id_product`, `id_dispositive`, `id_xpu`, `id_memory`, `id_screen`, `id_battery`, `id_connectivity`, `id_extras`, `id_cat`, `product_stock`, `product_price`, `listed`) VALUES
+(1, 1, 1, 1, 1, 1, 1, 1, 1, 100, 54000, 1),
+(2, 2, 2, 2, 2, 2, 2, 2, 2, 50, 67000, 1),
+(3, 3, 3, 3, 3, 3, 3, 3, 3, 150, 14000, 1),
+(4, 4, 4, 4, 4, 4, 4, 4, 4, 250, 96000, 1),
+(5, 5, 5, 5, 5, 5, 5, 5, 5, 200, 14000, 1),
+(6, 6, 6, 6, 6, 6, 6, 6, 6, 50, 21500, 1),
+(7, 7, 7, 7, 7, 7, 7, 7, 7, 90, 110000, 1),
+(8, 8, 8, 8, 8, 8, 8, 8, 8, 53, 89000, 1),
+(9, 9, 9, 9, 9, 9, 9, 9, 9, 20, 60000, 1);
 
 -- --------------------------------------------------------
 
@@ -289,7 +311,9 @@ INSERT INTO `screens` (`id_screen`, `screen_type`, `screen_size`, `screen_reso`,
 (4, 'OLED', '5.8', '1125 x 2436', '19.5:9'),
 (5, 'IPS', '6.26', '720 x 1520', '19:9'),
 (6, 'LTPS IPS', '6.59', '1080 x 2340', '19.5:9'),
-(7, 'Liquid Retina IPS LCD', '6.1', '828 x 1792', '19.5:9');
+(7, 'Liquid Retina IPS LCD', '6.1', '828 x 1792', '19.5:9'),
+(8, 'Fluid AMOLED', '6.67', '1440 x 3120', '19.5:9'),
+(9, 'P-OLED', '5.5', '1080 x 2160', '18:9');
 
 -- --------------------------------------------------------
 
@@ -314,7 +338,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `usuario`, `email`, `pass`, `ultima_conexion`, `fecha_registro`, `verificado`, `codigo_verificacion`, `codigo_contrasena`) VALUES
-(10, 'joel4', 'joel@sdfsd.com', '529523225c148643fbde10b90337d775', '2019-09-14', '2019-09-14', 'verificado', '9G5Mtb7w1iyVIcq', '');
+(10, 'joel4', 'joel@sdfsd.com', '529523225c148643fbde10b90337d775', '2019-09-14', '2019-09-14', 'verificado', '9G5Mtb7w1iyVIcq', ''),
+(11, 'rocio', 'test@test.com', 'sadfsdfsadf', '2019-09-29', '2019-09-28', 'no verificado', '', '');
 
 -- --------------------------------------------------------
 
@@ -343,7 +368,9 @@ INSERT INTO `xpu` (`id_xpu`, `cpu_brand`, `cpu_model`, `cpu_cores`, `gpu_brand`,
 (4, 'Apple', 'A12 Bionic', '8', 'Apple', 'Apple GPU', ''),
 (5, 'Mediatek', 'Helio P22', '8', 'PowerVR', 'GE8320', ''),
 (6, 'HiSilicon', 'Kirin 810', '8', 'ARM', 'Mali G52', ''),
-(7, 'Apple', 'A13 Bionic', '6', 'Apple', 'Apple GPU', '');
+(7, 'Apple', 'A13 Bionic', '6', 'Apple', 'Apple GPU', ''),
+(8, 'Qualcomm', 'Snapdragon 855', '8', 'Qualcomm', 'Adreno 640', ''),
+(9, 'Qualcomm', 'Snapdragon 845', '8', 'Qualcomm', 'Adreno 630', '');
 
 --
 -- Indexes for dumped tables
@@ -432,67 +459,67 @@ ALTER TABLE `xpu`
 -- AUTO_INCREMENT for table `batteries`
 --
 ALTER TABLE `batteries`
-  MODIFY `id_battery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_battery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id_cat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_cat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `connectivity`
 --
 ALTER TABLE `connectivity`
-  MODIFY `id_connectivity` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_connectivity` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `dispositives`
 --
 ALTER TABLE `dispositives`
-  MODIFY `id_dispositives` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_dispositives` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `extras`
 --
 ALTER TABLE `extras`
-  MODIFY `id_extras` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_extras` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `lens`
 --
 ALTER TABLE `lens`
-  MODIFY `id_lens` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_lens` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `memories`
 --
 ALTER TABLE `memories`
-  MODIFY `id_memory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_memory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `screens`
 --
 ALTER TABLE `screens`
-  MODIFY `id_screen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_screen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `xpu`
 --
 ALTER TABLE `xpu`
-  MODIFY `id_xpu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_xpu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
