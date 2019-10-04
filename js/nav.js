@@ -54,6 +54,16 @@ document.addEventListener('DOMContentLoaded', () => {
   $(".login-bg").click(function() {
     $(".modal-login").toggleClass("is-active");
   });
+
+
+  $(".delete").click(function() {
+    $(".modal-delete").toggleClass("is-active");
+  });
+
+  $(".delete-bg").click(function() {
+    $(".modal-delete").toggleClass("is-active");
+  });
+
   
 
   $('#tabs li').click(function() {

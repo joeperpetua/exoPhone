@@ -1,3 +1,8 @@
+<?php
+
+require('php_config/connect.php');
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +37,7 @@
 
         <div class="column is-full container is-active" data-content="1">
             <?php
-                include('php_include/abm/getItemABM.php');
+                include('php_include/abm/getItemDelete.php');
             ?>
         </div>
 
