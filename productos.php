@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="css/filter.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="css/control.css">
+    
 
 	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>

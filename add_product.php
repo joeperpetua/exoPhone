@@ -197,8 +197,8 @@ if(isset($_POST['submit'])){
     $product_stock = $_POST['product_stock'];
     $product_price = $_POST['product_price'];
 
-    $sql .= "INSERT INTO products (id_dispositive, id_xpu, id_memory, id_screen, id_battery, id_connectivity, id_extras, id_cat, product_stock, product_price)
-    VALUES ('$id', '$id', '$id', '$id', '$id', '$id', '$id', '$id', '$product_stock', '$product_price');";
+    $sql .= "INSERT INTO products (id_dispositive, id_xpu, id_memory, id_screen, id_battery, id_connectivity, id_extras, id_cat, product_stock, product_price, listed)
+    VALUES ('$id', '$id', '$id', '$id', '$id', '$id', '$id', '$id', '$product_stock', '$product_price', '1');";
 
 
     $cant_cam = $_POST['cant_cam'];
