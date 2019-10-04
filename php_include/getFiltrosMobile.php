@@ -10,7 +10,16 @@
           </a>
 </div>
 
+<?php
+require('php_config/connect.php');
+$sql2="SELECT MIN(product_price) AS price FROM products;";  
+$consulta2=mysqli_query($connection,$sql2);
+$min=mysqli_fetch_array($consulta2);
 
+$sql3="SELECT MAX(product_price) AS price FROM products;";
+$consulta3=mysqli_query($connection,$sql3);
+$max=mysqli_fetch_array($consulta3);
+?>
 
 
 
@@ -18,12 +27,12 @@
 <div class="navbar-menu" id="filter">
   <div class="navbar-start">
     <aside class="menu has-background-white-bi is-outlined">
-                
+                <form action="" method="post">
                 <ul class="menu-list">
                     <li><p class="is-active is-size-4">Precio</p>
                         <ul>
-                            <li><p class="is-size-5">Min:</p><input type="number" name="price_min" class="input is-small is-rounded"></li>
-                            <li><p class="is-size-5">Max:</p><input type="number" name="price_max" class="input is-small is-rounded"></li>
+                        <li><p class="is-size-5">Min:</p><input type="number" name="price_min" class="input is-small is-rounded" value="0" min="0" max="<?php echo $max['price']; ?>"></li>
+                        <li><p class="is-size-5">Max:</p><input type="number" name="price_max" class="input is-small is-rounded" value="<?php echo $max['price']; ?>" min="<?php echo $min['price']; ?>" max="<?php echo $max['price']; ?>"></li>
                         </ul>
                     </li>
                 </ul>
@@ -61,8 +70,8 @@
                 </ul>
                 <br>
 
-                <button class="button is-medium">Filtrar</button>
-               
+                <input type="submit" name="filtrar" class="button is-medium" value="Filtrar">
+                </form>
 
     </aside>
   </div>

@@ -6,3 +6,16 @@
 .media-content{
     overflow: unset;
 }
+
+.card-title, .card-footer{
+    width: 300px;
+    border: none;
+}
+
+.card{
+    max-width:350px;
+}
+
+.button.is-medium {
+    font-size: 1.25rem;
+}

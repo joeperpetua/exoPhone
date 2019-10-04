@@ -1,10 +1,4 @@
-<?php
-require('php_config/connect.php');
-require('queries/query_preview.php');
 
-    if (mysqli_num_rows($query_preview)>0) {
-        while ($query=mysqli_fetch_assoc($query_preview)) {
-?>
 
 
 <div class="column id-1 is-narrow">
@@ -57,7 +51,6 @@ require('queries/query_preview.php');
                                                         <span>Anadir</span>
                                                     </a>';
                                                 ?>
-
                                                 <?php echo'
                                                     <a class="button is-medium is-primary" href="item.php?id='.$query['id_dispositive'].'">
                                                         <span class="icon"><i class="fas fa-ellipsis-h"></i></span>
@@ -68,9 +61,3 @@ require('queries/query_preview.php');
                                             </footer>
                             </div>         
                     </div>
-<?php
-        }
-    }else{
-        echo 'No hay productos disponibles';
-    }
-?>
