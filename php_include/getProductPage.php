@@ -4,7 +4,7 @@ require('queries/query_full.php');
 
 $id=$_REQUEST['id'];
 
-$sql_con .= "WHERE id_dispositive = ".$id; 
+$sql_con .= "id_dispositive = ".$id; 
 $query_full=mysqli_query($connection,$sql_con);
 
 if (mysqli_num_rows($query_full)>0) {
