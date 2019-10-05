@@ -8,14 +8,11 @@
 }
 
 .card-title, .card-footer{
-    width: 300px;
+    width: 230px;
     border: none;
-}
-
-.card{
-    max-width:350px;
+    line-height: 1.325;
 }
 
 .button.is-medium {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
 }
