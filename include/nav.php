@@ -1,3 +1,23 @@
+<?php
+require('php_config/connect.php');
+
+
+session_start();
+if (isset($_SESSION['user'])) {
+    echo "<script>
+          console.log('sesion iniciada');
+          var session = 1;
+          var user = '".$_SESSION['user']."';
+        </script>";
+  }else {
+    echo "<script>
+          console.log('sesion no iniciada');
+          var session = 0;
+        </script>";
+  }
+
+?>
+
 <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation" id="scroll">
 
         <div class="navbar-brand">
@@ -25,9 +45,14 @@
             <div class="navbar-item">
 
 
-              <a href="" class="button"><i class="fas fa-shopping-cart"></i>&nbsp;Mi carrito</a>
+              <a href="" class="button"><i class="fas fa-shopping-cart"></i></a>
               &nbsp;
-              <a class="button is-primary login-btn"><i class="fas fa-user"></i>&nbsp;Mi cuenta</a>
+              <a class="button is-primary login-btn"><i class="fas fa-user" onclick="openProfile()"></i></a>
+              &nbsp;
+              <?php
+                if (isset($_SESSION['user'])) { ?>
+                  <a class="button" href="salir.php">Cerrar Sesion</a>
+              <?php } ?>
 
               <div class="modal modal-login">
                 <div class="modal-background login-bg"></div>

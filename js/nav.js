@@ -48,7 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   $(".login-btn").click(function() {
-    $(".modal-login").toggleClass("is-active");
+    if (session === 1) {
+      console.log('hola');
+      window.open("profile.php?user=" + user, "_self");  
+    }else{
+      $(".modal-login").toggleClass("is-active");
+    }
+    
   });
 
   $(".login-bg").click(function() {
@@ -75,5 +81,12 @@ document.addEventListener('DOMContentLoaded', () => {
     $('#body div').removeClass('is-active');
     $('div[data-content="' + tab + '"]').addClass('is-active');
   });
+
+
+  
+    function openProfile() {
+      
+    }
+  
 
 });
