@@ -395,5 +395,5 @@ if(isset($_POST['submit'])){
 
   }    
 
-
+  mysqli_close($connection);
 ?>

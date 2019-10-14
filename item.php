@@ -35,10 +35,11 @@
     <?php
         include('include/footer.html');
     ?>
-
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/jquery.localscroll/jquery.localscroll.js"></script>
-    <script src="node_modules/jquery.scrollto/jquery.scrollto.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/jquery.localscroll@2.0.0/jquery.localScroll.min.js"></script>
     <script type="text/javascript" src="js/nav.js"></script>
 </body>
 </html>
+
+<?php mysqli_close($connection); ?>
