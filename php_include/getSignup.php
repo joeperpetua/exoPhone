@@ -66,9 +66,9 @@ if (isset($_REQUEST['enviar'])) {
 		$para = $email;
     	$tema = 'Confirmacion de email';
     	/*TENGO Q CAMBIAR LA PAG XD POR LA MIA, CUADO LA HOSTEE*/
-    	$mensaje = 'Se ha registrado a'."<a href='https://exophone.000webhostapp.com/' style='text-decoration:none;color:red;'> Mercado exoPhone </a> con el usuario ".$user."\r\n\n".
+    	$mensaje = 'Se ha registrado a'."<a href='http://www.exophone.rf.gd/' style='text-decoration:none;'> Mercado exoPhone </a> con el usuario ".$user."\r\n\n".
     	'Por favor valide su registro haciendo click en'.
-    	"<a href='https://exophone.000webhostapp.com/verificar.php?cod=".$codigo."'style='text-decoration:none;'> este enlace</a>";
+    	"<a href='http://www.exophone.rf.gd/verificar.php?cod=".$codigo."'style='text-decoration:none;'> este enlace</a>";
          /*ACA TENGO Q CAMBIARLO Y MANDARLO A VERIFICAR.PHP ^^^^^^^^ahi*/
         $headers = "MIME-Version: 1.0\r\n";
         $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
