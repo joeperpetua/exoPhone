@@ -72,7 +72,7 @@ if (isset($_REQUEST['enviar'])) {
          /*ACA TENGO Q CAMBIARLO Y MANDARLO A VERIFICAR.PHP ^^^^^^^^ahi*/
         $headers = "MIME-Version: 1.0\r\n";
         $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
-    	$headers .= 'From: exoPhone@gmail.com' . "\r\n" .
+    	$headers .= 'From: contact@exophone.rf.gd' . "\r\n" .
     			   'Reply-to: '.$email. "\r\n";
     	mail($para, $tema, $mensaje, $headers);
          /*no funca porq no esta hosteada xd*/
