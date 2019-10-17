@@ -66,9 +66,6 @@ if (isset($_REQUEST['enviar'])) {
 		mysqli_query($connection,$sql);
         
 
-
-        date_default_timezone_set('Etc/UTC');
-
         // Edit this path if PHPMailer is in a different location.
         require('./PHPMailer/PHPMailerAutoload.php');
 

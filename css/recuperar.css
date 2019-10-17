@@ -1,0 +1,48 @@
+html{
+    overflow: scroll;
+}
+
+.section{
+    padding: 4rem 1.5rem;
+}
+
+.abm{
+    width: 95%;
+    margin: 0 auto;
+}
+
+.container{
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+}
+
+.box{
+    max-height: 70vh;
+    overflow: auto;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.columns{
+    overflow: auto;
+}
+
+.back{
+    position: absolute;
+    top: 4%;
+}
+
+.send{
+    position: absolute;
+    right: 10%;
+    top: 4%;
+}
+
+
+@media screen and (min-width: 768px){
+    .box, .abm{
+        width: 60%;
+    }
+
+}
