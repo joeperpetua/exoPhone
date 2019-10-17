@@ -2,7 +2,9 @@ section{
     margin-bottom: 4%;
 }
 
-
+html{
+  overflow: scroll;
+}
 
 .media-content{
   overflow: unset;
@@ -19,6 +21,17 @@ article{
 
 .id-1:hover, .id-2:hover, .id-3:hover, .id-4:hover{
     box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, .6);
+}
+
+.hero{
+  margin-top: 6vh;
+}
+
+.container_hero{
+  flex-grow: 1;
+  margin: 0 auto;
+  position: relative;
+  width: auto;
 }
 
 .hero.has-background {
