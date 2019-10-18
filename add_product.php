@@ -1,4 +1,5 @@
 <?php
+
 require('php_config/connect.php');
 ?>
 
@@ -14,6 +15,7 @@ require('php_config/connect.php');
 	<link rel="stylesheet" href="css/modal.css">
 	<link rel="stylesheet" href="css/cards.css">
     <link rel="stylesheet" href="css/abm.css">
+    <link rel="stylesheet" href="css/nav.css">
 
 	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
@@ -393,5 +395,5 @@ if(isset($_POST['submit'])){
 
   }    
 
-
+  mysqli_close($connection);
 ?>

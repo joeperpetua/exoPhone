@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2019 at 09:56 PM
+-- Generation Time: Oct 11, 2019 at 10:40 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.1.30
 
@@ -289,6 +289,20 @@ INSERT INTO `products` (`id_product`, `id_dispositive`, `id_xpu`, `id_memory`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `purchase`
+--
+
+CREATE TABLE `purchase` (
+  `id` int(11) NOT NULL,
+  `id_product` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `purchase_quantity` int(11) NOT NULL,
+  `purchase_total` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `screens`
 --
 
@@ -323,23 +337,28 @@ INSERT INTO `screens` (`id_screen`, `screen_type`, `screen_size`, `screen_reso`,
 
 CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
-  `usuario` varchar(30) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `email` varchar(90) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `pass` varchar(40) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `ultima_conexion` date NOT NULL,
-  `fecha_registro` date NOT NULL,
-  `verificado` varchar(30) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `codigo_verificacion` varchar(30) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `codigo_contrasena` varchar(256) COLLATE utf8mb4_spanish_ci NOT NULL
+  `user_alias` varchar(30) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `user_mail` varchar(90) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `user_pass` varchar(40) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `user_name` text COLLATE utf8mb4_spanish_ci NOT NULL,
+  `user_surname` text COLLATE utf8mb4_spanish_ci NOT NULL,
+  `user_adress` text COLLATE utf8mb4_spanish_ci NOT NULL,
+  `user_last_con` date NOT NULL,
+  `user_signup` date NOT NULL,
+  `user_is_verified` tinyint(1) NOT NULL,
+  `user_verification_code` varchar(30) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `user_pass_code` varchar(256) COLLATE utf8mb4_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `usuario`, `email`, `pass`, `ultima_conexion`, `fecha_registro`, `verificado`, `codigo_verificacion`, `codigo_contrasena`) VALUES
-(10, 'joel4', 'joel@sdfsd.com', '529523225c148643fbde10b90337d775', '2019-09-14', '2019-09-14', 'verificado', '9G5Mtb7w1iyVIcq', ''),
-(11, 'rocio', 'test@test.com', 'sadfsdfsadf', '2019-09-29', '2019-09-28', 'no verificado', '', '');
+INSERT INTO `user` (`id_user`, `user_alias`, `user_mail`, `user_pass`, `user_name`, `user_surname`, `user_adress`, `user_last_con`, `user_signup`, `user_is_verified`, `user_verification_code`, `user_pass_code`) VALUES
+(10, 'joel4', 'joel@sdfsd.com', '529523225c148643fbde10b90337d775', 'Joel', 'Perpetua', 'calle falsa 123', '2019-09-14', '2019-09-14', 0, '9G5Mtb7w1iyVIcq', ''),
+(11, 'rocio', 'test@test.com', 'sadfsdfsadf', 'Rocio', 'Sanchez', '25 de Mayo 321', '2019-09-29', '2019-09-28', 0, '', ''),
+(12, 'schere', 'test@test.com', '25f9e794323b453885f5181f1b624d0b', 'Scherezade', 'Apellido', 'Cervantes 123', '2019-10-07', '2019-10-07', 0, 'EVoOD6nYiv54fNx', ''),
+(13, 'joel', 'test@test.com', '25f9e794323b453885f5181f1b624d0b', 'joel', 'perpetua', 'sadfsad 123', '2019-10-07', '2019-10-07', 0, 'Ctazj5gv4ldum3f', '');
 
 -- --------------------------------------------------------
 
@@ -434,6 +453,14 @@ ALTER TABLE `products`
   ADD KEY `id_cat` (`id_cat`);
 
 --
+-- Indexes for table `purchase`
+--
+ALTER TABLE `purchase`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_user` (`id_user`),
+  ADD KEY `id_product` (`id_product`);
+
+--
 -- Indexes for table `screens`
 --
 ALTER TABLE `screens`
@@ -504,6 +531,12 @@ ALTER TABLE `products`
   MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT for table `purchase`
+--
+ALTER TABLE `purchase`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `screens`
 --
 ALTER TABLE `screens`
@@ -513,7 +546,7 @@ ALTER TABLE `screens`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `xpu`
@@ -537,11 +570,19 @@ ALTER TABLE `lens`
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`id_dispositive`) REFERENCES `dispositives` (`id_dispositives`),
   ADD CONSTRAINT `products_ibfk_10` FOREIGN KEY (`id_extras`) REFERENCES `extras` (`id_extras`),
+  ADD CONSTRAINT `products_ibfk_11` FOREIGN KEY (`id_cat`) REFERENCES `category` (`id_cat`),
   ADD CONSTRAINT `products_ibfk_4` FOREIGN KEY (`id_xpu`) REFERENCES `xpu` (`id_xpu`),
   ADD CONSTRAINT `products_ibfk_5` FOREIGN KEY (`id_memory`) REFERENCES `memories` (`id_memory`),
   ADD CONSTRAINT `products_ibfk_6` FOREIGN KEY (`id_screen`) REFERENCES `screens` (`id_screen`),
   ADD CONSTRAINT `products_ibfk_7` FOREIGN KEY (`id_battery`) REFERENCES `batteries` (`id_battery`),
   ADD CONSTRAINT `products_ibfk_9` FOREIGN KEY (`id_connectivity`) REFERENCES `connectivity` (`id_connectivity`);
+
+--
+-- Constraints for table `purchase`
+--
+ALTER TABLE `purchase`
+  ADD CONSTRAINT `purchase_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`),
+  ADD CONSTRAINT `purchase_ibfk_2` FOREIGN KEY (`id_product`) REFERENCES `products` (`id_product`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

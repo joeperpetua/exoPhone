@@ -51,9 +51,11 @@ if (isset($_REQUEST['enviar'])) {
     $surname = $_REQUEST['surname'];
     $adress = $_REQUEST['adress'];
 	
-
-
-	$codigo=substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 15);
+    $codigo=substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 15);
+    $msg = 'Se ha registrado a'."<a href='http://www.exophone.rf.gd/' style='text-decoration:none;'> Mercado exoPhone </a> con el usuario ".$user."\r\n\n".
+        'Por favor valide su registro haciendo click en'. "<a href='http://www.exophone.rf.gd/verificar.php?cod=".$codigo."'style='text-decoration:none;'> este enlace</a>";
+        
+	
 	$fecha_actual= date("Y/m/d");
 
 	if ($pass === $confirmPass) {
@@ -62,21 +64,53 @@ if (isset($_REQUEST['enviar'])) {
         VALUES ('$user', '$email', '$pass', '$name', '$surname', '$adress', '$fecha_actual', '$fecha_actual', '0', '$codigo', '')";
 
 		mysqli_query($connection,$sql);
+        
 
-		$para = $email;
-    	$tema = 'Confirmacion de email';
-    	/*TENGO Q CAMBIAR LA PAG XD POR LA MIA, CUADO LA HOSTEE*/
-    	$mensaje = 'Se ha registrado a'."<a href='https://exophone.000webhostapp.com/' style='text-decoration:none;color:red;'> Mercado exoPhone </a> con el usuario ".$user."\r\n\n".
-    	'Por favor valide su registro haciendo click en'.
-    	"<a href='https://exophone.000webhostapp.com/verificar.php?cod=".$codigo."'style='text-decoration:none;'> este enlace</a>";
-         /*ACA TENGO Q CAMBIARLO Y MANDARLO A VERIFICAR.PHP ^^^^^^^^ahi*/
-        $headers = "MIME-Version: 1.0\r\n";
-        $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
-    	$headers .= 'From: exoPhone@gmail.com' . "\r\n" .
-    			   'Reply-to: '.$email. "\r\n";
-    	mail($para, $tema, $mensaje, $headers);
-         /*no funca porq no esta hosteada xd*/
-		echo '<script>alert("Usuario registrado exitosamente!")</script>';
+        // Edit this path if PHPMailer is in a different location.
+        require('./PHPMailer/PHPMailerAutoload.php');
+
+        $mail = new PHPMailer;
+        $mail->isSMTP();
+
+        /*
+        * Server Configuration
+        */
+
+        $mail->Host = 'smtp.gmail.com'; // Which SMTP server to use.
+        $mail->Port = 587; // Which port to use, 587 is the default port for TLS security.
+        $mail->SMTPSecure = 'tls'; // Which security method to use. TLS is most secure.
+        $mail->SMTPAuth = true; // Whether you need to login. This is almost always required.
+        $mail->Username = "mail@gmail.com"; // Your Gmail address.
+        $mail->Password = "password"; // Your Gmail login password or App Specific Password.
+
+        /*
+        * Message Configuration
+        */
+
+        $mail->setFrom('mail@gmail.com', 'exoPhone'); // Set the sender of the message.
+        $mail->addAddress($email, $name); // Set the recipient of the message.
+        $mail->Subject = 'Verificacion de cuenta exophone.rf.gd'; // The subject of the message.
+
+        /*
+        * Message Content - Choose simple text or HTML email
+        */
+        
+
+        // ... or send an email with HTML.
+        $mail->msgHTML($msg);
+        $mail->IsHTML(true);
+        // Optional when using HTML: Set an alternative plain text message for email clients who prefer that.
+        $mail->AltBody = 'Se ha registrado a Mercado exoPhone con el usuario '.$user.'\r\n\n
+                        Por favor valide su registro ingresando en http://www.exophone.rf.gd/verificar.php?cod='.$codigo; 
+
+
+        if ($mail->send()) {
+            echo '<script>alert("Usuario registrado exitosamente!")</script>';
+        } else {
+            echo '<script>alert("Error: '.$mail->ErrorInfo.'")</script>';
+        }
+
+
 	} 
 	else{
 		echo "Las contraseñas no son iguales.";

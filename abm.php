@@ -15,6 +15,7 @@ require('php_config/connect.php');
 	<link rel="stylesheet" href="css/modal.css">
 	<link rel="stylesheet" href="css/cards.css">
     <link rel="stylesheet" href="css/abm.css">
+    <link rel="stylesheet" href="css/nav.css">
 
 	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
@@ -69,10 +70,12 @@ require('php_config/connect.php');
 
 
 
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="node_modules/jquery.localscroll/jquery.localscroll.js"></script>
-<script src="node_modules/jquery.scrollto/jquery.scrollto.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/jquery.localscroll@2.0.0/jquery.localScroll.min.js"></script>
 <script type="text/javascript" src="js/nav.js"></script>
 
 </body>
 </html>
+
+<?php mysqli_close($connection); ?>

@@ -36,8 +36,10 @@ if (isset($_SESSION['user'])) {
           <a class="navbar-item" href="productos.php">Productos</a>  
           <a class="navbar-item" href="herramienta.php">Herramienta de selección</a> 
           <a class="navbar-item" href="#contact">Contacto</a>
-          <span class="navbar-item"><input type="text" class="input" placeholder="Buscar producto"></span>
+          <span class="navbar-item search-box"><input type="text" class="input" autocomplete="off" placeholder="Buscar producto"> <div class="result"></div></span>
         </div>
+
+        <?php include('php_include/searchbar/controller.php'); ?>
   
         <div class="navbar-end">
             <div class="navbar-item">
