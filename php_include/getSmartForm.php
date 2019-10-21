@@ -116,7 +116,7 @@
                 <br>
                 <p class="subtitle">¿Cuánto es lo máximo que gastaría en un nuevo celular? (ARS)</p>
                 <ul>
-                    <li><input type="number" value="" name="p10" class="input"></li><br>
+                    <li><input type="number" value="0" name="p10" class="input"></li><br>
                 </ul>
                 
             </div>
