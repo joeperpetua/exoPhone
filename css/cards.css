@@ -3,7 +3,7 @@ section{
 }
 
 html{
-  overflow: scroll;
+  overflow: auto;
 }
 
 .media-content{

@@ -6,8 +6,8 @@
                 <br>
                 <p class="subtitle">¿Mi trabajo depende, en gran parte, de mi celular?</p>
                 <ul>
-                    <li><label class="radio"><input type="radio" value="Necesidades basicas" name="category"> Si</label></li><br>
-                    <li><label class="radio"><input type="radio" value="Redes sociales" name="category"> No</label></li><br>
+                    <li><label class="radio"><input type="radio" value="y" name="p1"> Si</label></li><br>
+                    <li><label class="radio"><input type="radio" value="n" name="p1"> No</label></li><br>
                 </ul>
             </div>
             
@@ -17,8 +17,8 @@
                 <br>
                 <p class="subtitle">¿Hace más de 5 llamadas por día?</p>
                 <ul>
-                    <li><label class="radio"><input type="radio" value="Necesidades basicas" name="category"> Si</label></li><br>
-                    <li><label class="radio"><input type="radio" value="Redes sociales" name="category"> No</label></li><br>
+                    <li><label class="radio"><input type="radio" value="y" name="p2"> Si</label></li><br>
+                    <li><label class="radio"><input type="radio" value="n" name="p2"> No</label></li><br>
                 </ul>    
             </div>
 
@@ -28,12 +28,12 @@
                 <br>
                 <p class="subtitle">Seleccionar la app que más podría usar en su día a día.</p>
                 <ul>
-                    <li><label class="radio"><input type="radio" value="Necesidades basicas" name="category"> Adobe Rush</label></li><br>
-                    <li><label class="radio"><input type="radio" value="Redes sociales" name="category"> Filmora</label></li><br>
-                    <li><label class="radio"><input type="radio" value="Trabajo de oficina" name="category"> PUBG Mobile</label></li><br>
-                    <li><label class="radio"><input type="radio" value="Dibujo" name="category"> Asphalt 9</label></li><br>
-                    <li><label class="radio"><input type="radio" value="Edicion" name="category"> FIFA Mobile</label></li><br>
-                    <li><label class="radio"><input type="radio" value="Gaming" name="category"> Ninguna de las anteriores</label></li><br>
+                    <li><label class="radio"><input type="radio" value="y" name="p3"> Adobe Rush</label></li><br>
+                    <li><label class="radio"><input type="radio" value="y" name="p3"> Filmora</label></li><br>
+                    <li><label class="radio"><input type="radio" value="y" name="p3"> PUBG Mobile</label></li><br>
+                    <li><label class="radio"><input type="radio" value="y" name="p3"> Asphalt 9</label></li><br>
+                    <li><label class="radio"><input type="radio" value="y" name="p3"> FIFA Mobile</label></li><br>
+                    <li><label class="radio"><input type="radio" value="n" name="p3"> Ninguna de las anteriores</label></li><br>
                 </ul>          
             </div>
 
@@ -43,11 +43,11 @@
                 <br>
                 <p class="subtitle">Seleccionar la app que más podría usar en su día a día.</p>
                 <ul>
-                    <li><label class="radio"><input type="radio" value="Necesidades basicas" name="category"> Facebook</label></li><br>
-                    <li><label class="radio"><input type="radio" value="Redes sociales" name="category"> Instagram</label></li><br>
-                    <li><label class="radio"><input type="radio" value="Trabajo de oficina" name="category"> Snapchat</label></li><br>
-                    <li><label class="radio"><input type="radio" value="Dibujo" name="category"> Discord</label></li><br>
-                    <li><label class="radio"><input type="radio" value="Gaming" name="category"> Ninguna de las anteriores</label></li><br>
+                    <li><label class="radio"><input type="radio" value="y" name="p4"> Facebook</label></li><br>
+                    <li><label class="radio"><input type="radio" value="y" name="p4"> Instagram</label></li><br>
+                    <li><label class="radio"><input type="radio" value="y" name="p4"> Snapchat</label></li><br>
+                    <li><label class="radio"><input type="radio" value="y" name="p4"> Discord</label></li><br>
+                    <li><label class="radio"><input type="radio" value="n" name="p4"> Ninguna de las anteriores</label></li><br>
                 </ul>             
             </div>
 
@@ -57,8 +57,8 @@
                 <br>
                 <p class="subtitle">¿Le importa mucho la cámara de su dispositivo?</p>
                 <ul>
-                    <li><label class="radio"><input type="radio" value="Necesidades basicas" name="category"> Si</label></li><br>
-                    <li><label class="radio"><input type="radio" value="Redes sociales" name="category"> No</label></li><br>
+                    <li><label class="radio"><input type="radio" value="y" name="p5"> Si</label></li><br>
+                    <li><label class="radio"><input type="radio" value="n" name="p5"> No</label></li><br>
                     
                 </ul>      
             </div>
@@ -69,8 +69,8 @@
                 <br>
                 <p class="subtitle">¿Qué suele importarle más en cuanto a la cámara de un celular?</p>
                 <ul>
-                    <li><label class="radio"><input type="radio" value="Necesidades basicas" name="category"> Fotos</label></li><br>
-                    <li><label class="radio"><input type="radio" value="Redes sociales" name="category"> Videos</label></li><br>
+                    <li><label class="radio"><input type="radio" value="f" name="p6"> Fotos</label></li><br>
+                    <li><label class="radio"><input type="radio" value="v" name="p6"> Videos</label></li><br>
                 </ul>
             </div>
 
@@ -80,8 +80,8 @@
                 <br>
                 <p class="subtitle">¿Usaría su celular para dibujar usualmente?</p>
                 <ul>
-                    <li><label class="radio"><input type="radio" value="Necesidades basicas" name="category"> Si</label></li><br>
-                    <li><label class="radio"><input type="radio" value="Redes sociales" name="category"> No</label></li><br>
+                    <li><label class="radio"><input type="radio" value="y" name="p7"> Si</label></li><br>
+                    <li><label class="radio"><input type="radio" value="n" name="p7"> No</label></li><br>
                 </ul>     
             </div>
 
@@ -91,9 +91,9 @@
                 <br>
                 <p class="subtitle">¿Prefiere algún sistema operativo?</p>
                 <ul>
-                    <li><label class="radio"><input type="radio" value="Necesidades basicas" name="category"> Prefiero Android</label></li><br>
-                    <li><label class="radio"><input type="radio" value="Redes sociales" name="category"> Prefiero iOS</label></li><br>
-                    <li><label class="radio"><input type="radio" value="Trabajo de oficina" name="category"> Me da lo mismo / No se lo que es un sistema operativo</label></li><br>
+                    <li><label class="radio"><input type="radio" value="and" name="p8"> Prefiero Android</label></li><br>
+                    <li><label class="radio"><input type="radio" value="ios" name="p8"> Prefiero iOS</label></li><br>
+                    <li><label class="radio"><input type="radio" value="idk" name="p8"> Me da lo mismo / No se lo que es un sistema operativo</label></li><br>
                 </ul>
             </div>
 
@@ -104,8 +104,8 @@
                 <br>
                 <p class="subtitle">¿Le importaría no recibir demasiadas actualizaciones de sistema?</p>
                 <ul>
-                    <li><label class="radio"><input type="radio" value="Necesidades basicas" name="category"> Si</label></li><br>
-                    <li><label class="radio"><input type="radio" value="Redes sociales" name="category"> No</label></li><br>
+                    <li><label class="radio"><input type="radio" value="y" name="p9"> Si</label></li><br>
+                    <li><label class="radio"><input type="radio" value="n" name="p9"> No</label></li><br>
                 </ul>
                 
             </div>
@@ -116,7 +116,7 @@
                 <br>
                 <p class="subtitle">¿Cuánto es lo máximo que gastaría en un nuevo celular? (ARS)</p>
                 <ul>
-                    <li><input type="number" value="" name="" class="input"></li><br>
+                    <li><input type="number" value="" name="p10" class="input"></li><br>
                 </ul>
                 
             </div>
@@ -126,7 +126,7 @@
         </div>
     </div>
         
-        <input type="submit" value="Enviar" name="submit" id="send" class="button is-primary is-medium is-pulled-right">
+        <input type="submit" value="Enviar" name="guess" id="send" class="button is-primary is-medium is-pulled-right">
     </form> 
 
 
