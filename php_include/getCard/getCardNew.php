@@ -54,7 +54,7 @@ require('queries/query_preview_new.php');
                                 <footer class="card-footer">
                                             <div class="buttons is-centered">
                                                 <?php echo '
-                                                    <a class="button is-medium">
+                                                    <a href="carrito.php?id='.$query['id_dispositive'].'" class="button is-medium">
                                                         <span class="icon"><i class="fas fa-cart-plus"></i></span>
                                                         <span>Anadir</span>
                                                     </a>';

@@ -18,7 +18,7 @@
           <div class="hero-body">
             <div class="container">
               <h2 class="subtitle has-text-white">No estas seguro de que equipo elegir?</h2>
-              <h1 class="title has-text-white">Proba nuestra <a href="" class="has-text-grey-light"><strong>Herramienta de Seleccion</strong></a>!</h1>
+              <h1 class="title has-text-white">Proba nuestra <a href="smart.php" class="has-text-grey-light"><strong>Herramienta de Seleccion</strong></a>!</h1>
             </div>
           </div>
         </div>

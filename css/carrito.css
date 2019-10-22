@@ -1,0 +1,108 @@
+/* General Styles */
+
+*{
+    margin: 0;
+}
+
+.columns{
+    margin-top: 8vh;
+}
+
+.empty{
+    margin: 10% auto;
+    width: fit-content;
+}
+
+.input{
+    max-width: 50%;
+}
+
+.is-normal {
+    text-transform: none;
+}
+
+.is-small {
+    font-size: small;
+}
+
+.is-bold {
+    font-weight: bold;
+}
+
+.has-border {
+    border-bottom: .5px solid #d3d3d3;
+    border-top: .5px solid #d3d3d3;
+}
+
+.has-border-bottom {
+    border-bottom: .5px solid #d3d3d3;
+}
+
+.vertical-centering {
+    align-items: center;
+}
+
+.is-gray {
+    color: hsl(0, 0%, 86%);
+}
+
+.double-size {
+    font-size: 1.5em;
+}
+
+/* Navbar */
+
+
+
+/* Left Container */
+
+.breadcrumb-mast {
+    padding-top	: 2em;
+}
+
+.breadcrumb-mast p {
+    padding-bottom: 2em;
+}
+
+.left-container .breadcrumb li a:hover, .left-container .breadcrumb li a {
+    color: hsl(0, 0%, 86%);
+    font-size: small;
+}
+
+.left-container .breadcrumb li a:active {
+    color: hsl(0, 0%, 86%);
+}
+
+span.order-logo {
+    padding-right: .5em;
+}
+
+.order-details-title {
+    padding: 1em 0;
+}
+
+.order-details-title h2 {
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.order-number {
+    padding: .5em 0;
+}
+
+.order-details {
+    padding: 1em;
+}
+
+.details-box {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.details-box .left {
+    border-right: .5px solid #d3d3d3;
+}
+
+/* right container */
+
+

@@ -1,0 +1,19 @@
+.guess{
+    margin-left: 73%;;
+}
+
+.res{
+    margin: 0 auto;
+}
+
+.card{
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 768px){
+    .res{
+        max-width: 60%;
+    }
+}
+
+

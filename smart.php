@@ -1,9 +1,13 @@
+<?php require('php_config/connect.php'); ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>exoPhone</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="imagenes/icon-low.png" sizes="16x16">
 	
 	<link rel="stylesheet" href="css/mystyles.css">
 	<link rel="stylesheet" href="css/login.css">
@@ -11,6 +15,7 @@
 	<link rel="stylesheet" href="css/abm.css">
 	<link rel="stylesheet" href="css/cards.css">
 	<link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/smartSelect.css">
 
 	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
@@ -53,10 +58,18 @@
             <?php
                 include('php_include/getSmartForm.php');
             ?>
-            
         
+ 
+            
+        <?php
+            include('php_include/getSelection.php');
+        ?>
 
 </section>
+
+<?php
+            include('include/footer.html');
+        ?>
 
 
 
@@ -67,3 +80,4 @@
 
 </body>
 </html>
+

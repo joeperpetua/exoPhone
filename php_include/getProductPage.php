@@ -57,8 +57,8 @@ if (mysqli_num_rows($query_full)>0) {
                                 </div>
                             </div>
                             <div class="buttons">
-                                <a class="button is-primary is-medium">Anadir a carrito</a>
-                                <a class="button is-medium">Comprar</a>
+                                <a href="carrito.php?id='<?php echo $query['id_dispositive']; ?>'" class="button is-primary is-medium">Anadir a carrito</a>
+                                <a href="carrito.php?id='<?php echo $query['id_dispositive']; ?>'" class="button is-medium">Comprar</a>
                             </div>
                            
                         

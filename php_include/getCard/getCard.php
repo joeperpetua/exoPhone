@@ -46,7 +46,7 @@
                                 <footer class="card-footer">
                                             <div class="buttons is-centered">
                                                 <?php echo '
-                                                    <a class="button is-medium">
+                                                    <a class="button is-medium" href="carrito.php?id='.$query['id_dispositive'].'">
                                                         <span class="icon"><i class="fas fa-cart-plus"></i></span>
                                                         <span>Anadir</span>
                                                     </a>';
