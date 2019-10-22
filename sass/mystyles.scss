@@ -26,6 +26,8 @@ $footer-background-color: #dce6df;
 
 //Forms
 @import "../node_modules/bulma/sass/form/_all.sass";
+@import "../node_modules/bulma-extensions/bulma-checkradio/src/sass/index.sass";
+@import "../node_modules/bulma-extensions/bulma-slider/src/sass/index.sass";
 
 //Componentes
 @import "../node_modules/bulma/sass/components/navbar.sass";

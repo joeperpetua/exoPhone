@@ -36,18 +36,18 @@ if (isset($_SESSION['user'])) {
   
         <div class="navbar-start">
           <a class="navbar-item" href="productos.php">Productos</a>  
-          <a class="navbar-item" href="herramienta.php">Herramienta de selección</a> 
+          <a class="navbar-item" href="smart.php">Herramienta de selección</a> 
           <a class="navbar-item" href="#contact">Contacto</a>
           <span class="navbar-item search-box"><input type="text" class="input" autocomplete="off" placeholder="Buscar producto"> <div class="result"></div></span>
         </div>
 
-        <?php include('php_include/searchbar/controller.php'); ?>
+        
   
         <div class="navbar-end">
             <div class="navbar-item">
 
 
-              <a href="" class="button"><i class="fas fa-shopping-cart"></i></a>
+              <a href="carrito.php" class="button"><i class="fas fa-shopping-cart"></i></a>
               &nbsp;
               <a class="button is-primary login-btn"><i class="fas fa-user" onclick="openProfile()"></i></a>
               &nbsp;
