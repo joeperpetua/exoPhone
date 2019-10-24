@@ -8,11 +8,14 @@ require('queries/query_user.php');
 
 
 <tr>
-    <th><p> <?php echo $query_u['usuario'];?> </p> </th>
-    <th><p> <?php echo $query_u['email'];?> </p></th>
-    <th><p> <?php echo $query_u['fecha_registro'];?> </p></th>
-    <th><p> <?php echo $query_u['ultima_conexion'];?> </p></th>
-    <th><p> <?php echo $query_u['verificado'];?> </p></th>
+    <th><p> <?php echo $query_u['user_alias'];?> </p> </th>
+    <th><p> <?php echo $query_u['user_name'];?> </p> </th>
+    <th><p> <?php echo $query_u['user_surname'];?> </p> </th>
+    <th><p> <?php echo $query_u['user_adress'];?> </p> </th>
+    <th><p> <?php echo $query_u['user_mail'];?> </p></th>
+    <th><p> <?php echo $query_u['user_signup'];?> </p></th>
+    <th><p> <?php echo $query_u['user_last_con'];?> </p></th>
+    <th><p> <?php echo $query_u['user_is_verified'];?> </p></th>
 </tr>
 
 <?php

@@ -32,6 +32,7 @@ require('php_config/connect.php');
         <ul>
             <li class="is-active" data-tab="1"><a>Equipos</a></li>
             <li data-tab="2"><a>Usuarios</a></li>
+            <li data-tab="3"><a>Ventas</a></li>
         </ul>
     </div>
     <div class="box" id="body">
@@ -47,7 +48,10 @@ require('php_config/connect.php');
             <table class="table is-fullwidth is-striped is-hoverable">
                 <thead>
                     <tr>
-                        <th>Nombre de usuario</th>
+                        <th>Usuario</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Domicilio</th>
                         <th>Correo</th>
                         <th>Fecha de registro</th>
                         <th>Ultima conexion</th>
@@ -60,6 +64,27 @@ require('php_config/connect.php');
                 </tbody>
             </table>
             
+        </div>
+
+        <div class="column is-full container is-active" data-content="3">
+        <table class="table is-fullwidth is-striped is-hoverable">
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Domicilio</th>
+                        <th>Correo</th>
+                        <th>Fecha de registro</th>
+                        <th>Ultima conexion</th>
+                        <th>Verificacion</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                        <?php include('php_include/abm/getUserABM.php'); ?>
+                </tbody>
+            </table>
         </div>
             
             
