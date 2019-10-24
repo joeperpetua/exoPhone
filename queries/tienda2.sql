@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 20, 2019 at 12:37 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.4
+-- Generation Time: Oct 11, 2019 at 10:40 PM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.1.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -50,29 +50,6 @@ INSERT INTO `batteries` (`id_battery`, `battery_type`, `battery_capacity`, `batt
 (7, 'Li-Ion', '3110', 'Si', 'Si'),
 (8, 'Li-Po', '4000', 'Si', 'No'),
 (9, 'Li-Po', '2915', 'Si', 'Si');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `cart`
---
-
-CREATE TABLE `cart` (
-  `id_cart` int(11) NOT NULL,
-  `id_product` int(11) NOT NULL,
-  `id_dispositives` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL,
-  `cart_cant` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`id_cart`, `id_product`, `id_dispositives`, `id_user`, `cart_cant`) VALUES
-(1, 2, 2, 1, 1),
-(2, 3, 3, 1, 1),
-(3, 6, 6, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -425,15 +402,6 @@ ALTER TABLE `batteries`
   ADD PRIMARY KEY (`id_battery`);
 
 --
--- Indexes for table `cart`
---
-ALTER TABLE `cart`
-  ADD PRIMARY KEY (`id_cart`),
-  ADD KEY `id_product` (`id_product`),
-  ADD KEY `id_user` (`id_user`),
-  ADD KEY `id_dispositive` (`id_dispositives`);
-
---
 -- Indexes for table `category`
 --
 ALTER TABLE `category`
@@ -519,12 +487,6 @@ ALTER TABLE `xpu`
 --
 ALTER TABLE `batteries`
   MODIFY `id_battery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT for table `cart`
---
-ALTER TABLE `cart`
-  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `category`

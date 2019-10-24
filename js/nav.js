@@ -105,9 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
     function openProfile() {
-      if(session === 1){
-        window.location.replace("/profile?user="+user);
-      }  
+      
     }
   
 
