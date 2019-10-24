@@ -5,12 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/png" href="imagenes/icon-low.png" sizes="16x16">
 
     <link rel="stylesheet" href="css/mystyles.css">
 	<link rel="stylesheet" href="css/cards.css">
 	<link rel="stylesheet" href="css/control.css">
-    <link rel="stylesheet" href="css/filter.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/nav.css">
@@ -25,17 +23,18 @@
 
 
 
-    
-    <?php
-        include('php_include/getProductPage.php');
-    ?>
-    
+    <section class="section">
+        <?php
+            include('php_include/getCarrito.php');
+        ?>
+    </section>
 
            
 
     <?php
         include('include/footer.html');
     ?>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery.localscroll@2.0.0/jquery.localScroll.min.js"></script>
