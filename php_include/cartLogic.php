@@ -197,16 +197,14 @@ function confirmarCompra(){
 	$prods_compra=$_SESSION['carrito'];
 	$total=0;
 	foreach ($prods_compra as  $indice => $producto) {
-			echo 'id - '.$producto['id'].'<br>';
-            echo 'marca - '.$producto['marca'].'<br>';
-            echo 'modelo - '.$producto['modelo'].'<br>';
-			echo 'precio - '.$producto['precio'].'<br>';
-			echo 'cantidad - '.$producto['cantidad'].'<br>';
-			echo 'Subtotal: $'.$prods_compra[$indice]['cantidad']*$prods_compra[$indice]['precio'].'<br><br>';
+            echo '<p class="subtitle">'.$producto['marca'].' '.$producto['modelo'].'</p><br>';
+			echo '<p class="subtitle">Precio unitario: $'.$producto['precio'].'</p><br>';
+			echo '<p class="subtitle">Cantidad: '.$producto['cantidad'].'</p><br>';
+			echo '<p class="subtitle">Subtotal: $'.$prods_compra[$indice]['cantidad']*$prods_compra[$indice]['precio'].'</p><br><br>';
 
 		    $total=$total+($prods_compra[$indice]['cantidad']*$prods_compra[$indice]['precio']);
 	}
-	echo 'TOTAL COMPRA $'.$total.'<br><br>';
+	echo '<p class="subtitle"><strong>TOTAL: $'.$total.'</strong></p><br><br>';
 }
 
  function comprar(){
@@ -214,7 +212,7 @@ function confirmarCompra(){
  	include("php_config/connect.php");
  	$fecha=date("Y-m-d");
  	$usuario=$_SESSION['id_user'];
- 	echo $fecha.'<br>';
+ 	
  	$sql="INSERT INTO orders (order_date, id_user) VALUES ('$fecha','$usuario')";
  	$insert=$connection->query($sql);
 	
@@ -222,7 +220,7 @@ function confirmarCompra(){
  	$sqlc="SELECT id_order FROM orders ORDER BY id_order desc LIMIT 1";
  	$consulta=$connection->query($sqlc);
  	$registro=$consulta->fetch_array();
- 	echo $registro[0];
+ 	
  	$id_order=$registro[0];
 
  	$prods_compra=$_SESSION['carrito'];
@@ -233,13 +231,15 @@ function confirmarCompra(){
  		$cantidad=$producto['cantidad'];
 
  		$sqli="INSERT INTO prodxorder (id_order, id_product, product_price, product_cant) VALUES ('$registro[0]','$id_prod','$precio','$cantidad')";
- 		$insertar=$connection->query($sqli)? print("ok"): print("Ups, :(");
+ 		$insertar=$connection->query($sqli)? print(""): print("Ups, :(");
 
  		$total=$total+($prods_compra[$indice]['precio']*$prods_compra[$indice]['cantidad']);
 	}
 	
  	$sql="UPDATE orders SET order_total='$total'";
- 	$actualizar=$connection->query($sql)? print("ok"): print("Ups, :(");
+     $actualizar=$connection->query($sql)? print("<script>alert('Compra realizada correctamente');
+                                                window.location.replace('index.php');    
+                                                </script>"): print("Ups, :(");
  	}
 
 ?>

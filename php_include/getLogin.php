@@ -53,7 +53,6 @@
         $_SESSION['user'] = $use;
         $_SESSION['id_user'] =  $registro['id_user'];
         echo "<script>
-            alert('".$_SESSION['id_user']."');
           location.replace('index.php');
         </script>";
     }

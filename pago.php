@@ -25,60 +25,20 @@
   <section class="section">
 
 
-  <h2>Usted esta comprando:</h2>
+  <h2 class="title">Usted esta comprando:</h2><br>
   <?php 
   include('php_include/cartLogic.php');
 
   if(!isset($_GET['c'])){
     confirmarCompra();
-    echo '<a href="pago.php?c=1">Comfirmar Compra</a>';
+    echo '<a class="button is-info is large is-centered" href="pago.php?c=1">Confirmar Compra</a>';
   }else{
     comprar();
   }
   ?>
 
 
-    <form action="" class="form">
-        
-      <div class="field">
-        <label class="label">Nombre y Apellido</label>
-        <div class="control">
-          <input class="input" type="text" placeholder="Nombre / Apellido">
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Tarjeta de credito</label>
-        <div class="control">
-          <input class="input is-success" type="text" placeholder="N de Tarj" value="">
-        </div>
-        
-      </div>
-
-      <div class="field">
-        <label class="label">Domicilio</label>
-        <div class="control">
-          <input class="input is-danger" type="email" placeholder="Domicilio" value="">
-        </div>
-      </div>
-
-
-      <div class="field">
-        <label class="label">Notas adicionales</label>
-        <div class="control">
-          <textarea class="textarea" placeholder="Escriba aqui"></textarea>
-        </div>
-      </div>
-
-      <div class="field is-grouped">
-        <div class="control">
-          <button class="button is-link">Finalizar compra</button>
-        </div>
-        <div class="control">
-          <button class="button is-link is-light">Cancelar</button>
-        </div>
-      </div>
-    </form>
+    
   </section>
     
 
