@@ -23,6 +23,21 @@
 
 
   <section class="section">
+
+
+  <h2>Usted esta comprando:</h2>
+  <?php 
+  include('php_include/cartLogic.php');
+
+  if(!isset($_GET['c'])){
+    confirmarCompra();
+    echo '<a href="pago.php?c=1">Comfirmar Compra</a>';
+  }else{
+    comprar();
+  }
+  ?>
+
+
     <form action="" class="form">
         
       <div class="field">

@@ -209,37 +209,37 @@ function confirmarCompra(){
 	echo 'TOTAL COMPRA $'.$total.'<br><br>';
 }
 
-// function comprar(){
+ function comprar(){
 
-// 	include("php_config/connect.php");
-// 	$fecha=date("Y-m-d");
-// 	$usuario=$_SESSION['id_usuario'];
-// 	echo $fecha.'<br>';
-// 	$sql="INSERT INTO ventas (fecha, id_usuario) VALUES ('$fecha','$usuario')";
-// 	$insert=$connection->query($sql);
+ 	include("php_config/connect.php");
+ 	$fecha=date("Y-m-d");
+ 	$usuario=$_SESSION['id_user'];
+ 	echo $fecha.'<br>';
+ 	$sql="INSERT INTO orders (order_date, id_user) VALUES ('$fecha','$usuario')";
+ 	$insert=$connection->query($sql);
 	
 
-// 	$sqlc="SELECT id_venta FROM ventas ORDER BY id_venta desc LIMIT 1,1";
-// 	$consulta=$connection->query($sqlc);
-// 	$registro=$consulta->fetch_array();
-// 	echo $registro[0];
-// 	$id_venta=$registro[0];
+ 	$sqlc="SELECT id_order FROM orders ORDER BY id_order desc LIMIT 1";
+ 	$consulta=$connection->query($sqlc);
+ 	$registro=$consulta->fetch_array();
+ 	echo $registro[0];
+ 	$id_order=$registro[0];
 
-// 	$prods_compra=$_SESSION['carrito'];
-// 	$total=0;
-// 	foreach ($prods_compra as $indice => $producto) {
-// 		$id_prod=$producto['id'];
-// 		$precio=$producto['precio'];
-// 		$cantidad=$producto['cantidad'];
+ 	$prods_compra=$_SESSION['carrito'];
+ 	$total=0;
+ 	foreach ($prods_compra as $indice => $producto) {
+ 		$id_prod=$producto['id'];
+ 		$precio=$producto['precio'];
+ 		$cantidad=$producto['cantidad'];
 
-// 		$sqli="INSERT INTO prodxventas (id_venta, id_prod, precio_u, cant) VALUES ('$registro[0]','$id_prod','$precio','$cantidad')";
-// 		$insertar=$connection->query($sqli)? print("ok"): print("Ups, :(");
+ 		$sqli="INSERT INTO prodxorder (id_order, id_product, product_price, product_cant) VALUES ('$registro[0]','$id_prod','$precio','$cantidad')";
+ 		$insertar=$connection->query($sqli)? print("ok"): print("Ups, :(");
 
-// 		$total=$total+($prods_compra[$indice]['precio']*$prods_compra[$indice]['cantidad']);
-// 	}
+ 		$total=$total+($prods_compra[$indice]['precio']*$prods_compra[$indice]['cantidad']);
+	}
 	
-// 	$sql="UPDATE ventas SET total='$total'";
-// 	$actualizar=$connection->query($sql)? print("ok"): print("Ups, :(");
-// 	}
+ 	$sql="UPDATE orders SET order_total='$total'";
+ 	$actualizar=$connection->query($sql)? print("ok"): print("Ups, :(");
+ 	}
 
 ?>
