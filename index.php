@@ -1,3 +1,7 @@
+<?php
+	require('php_config/connect.php');
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +23,8 @@
 </head>
 <body>
 
+
+	<div id="popup"></div>
 <?php
     include('include/nav.php');
     include('include/slider.html');

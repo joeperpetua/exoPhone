@@ -8,18 +8,24 @@ if (isset($_SESSION['user'])) {
           console.log('sesion iniciada');
           var session = 1;
           var user = '".$_SESSION['user']."';
+          console.log('".$_SESSION['id_user']."');
         </script>"; 
 
-  $sqlV = "SELECT user_is_verified FROM user WHERE user_id =".$_SESSION['id_user'];
+  $sqlV = "SELECT user_is_verified FROM user WHERE id_user =".$_SESSION['id_user'];
   $queryV = mysqli_query($connection,$sqlV);
 
   $queryconsulta = mysqli_fetch_assoc($queryV);
   if($queryconsulta["user_is_verified"] == 0){
 
-    echo "<script>alert('Por favor verifique su cuenta!')</script>";
+    echo '<script>
+            var $popUp = document.getElementById("popup");
+            $popUp.classList.add("notification");
+            $popUp.classList.add("is-danger");
+            $popUp.innerHTML = "Por favor verifique su cuenta.";
+          </script>';
   }
 
-  }else {
+}else {
     echo "<script>
           console.log('sesion no iniciada');
           var session = 0;

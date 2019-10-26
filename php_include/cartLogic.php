@@ -230,13 +230,13 @@ function confirmarCompra(){
  		$precio=$producto['precio'];
  		$cantidad=$producto['cantidad'];
 
- 		$sqli="INSERT INTO prodxorder (id_order, id_product, product_price, product_cant) VALUES ('$registro[0]','$id_prod','$precio','$cantidad')";
+ 		$sqli="INSERT INTO prodxorder (id_order, id_dispositives, product_price, product_cant) VALUES ('$registro[0]','$id_prod','$precio','$cantidad')";
  		$insertar=$connection->query($sqli)? print(""): print("Ups, :(");
 
  		$total=$total+($prods_compra[$indice]['precio']*$prods_compra[$indice]['cantidad']);
 	}
 	
- 	$sql="UPDATE orders SET order_total='$total'";
+ 	$sql="UPDATE orders SET order_total='$total' WHERE id_order='$registro[0]'";
      $actualizar=$connection->query($sql)? print("<script>alert('Compra realizada correctamente');
                                                 window.location.replace('index.php');    
                                                 </script>"): print("Ups, :(");
