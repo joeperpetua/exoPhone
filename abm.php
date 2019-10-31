@@ -45,46 +45,48 @@ require('php_config/connect.php');
         </div>
 
         <div class="is-full container" data-content="2">
-            <table class="table is-fullwidth is-striped is-hoverable">
-                <thead>
-                    <tr>
-                        <th>Usuario</th>
-                        <th>Nombres</th>
-                        <th>Apellidos</th>
-                        <th>Domicilio</th>
-                        <th>Correo</th>
-                        <th>Fecha de registro</th>
-                        <th>Ultima conexion</th>
-                        <th>Verificacion</th>
-                    </tr>
-                </thead>
+            <div class="table-container">
+                <table class="table is-fullwidth is-striped is-hoverable">
+                    <thead>
+                        <tr>
+                            <th>Usuario</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Domicilio</th>
+                            <th>Correo</th>
+                            <th>Fecha de registro</th>
+                            <th>Ultima conexion</th>
+                            <th>Verificacion</th>
+                        </tr>
+                    </thead>
 
-                <tbody>
-                        <?php include('php_include/abm/getUserABM.php'); ?>
-                </tbody>
-            </table>
-            
+                    <tbody>
+                            <?php include('php_include/abm/getUserABM.php'); ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <div class="column is-full container is-active" data-content="3">
-        <table class="table is-fullwidth is-striped is-hoverable">
-                <thead>
-                    <tr>
-                        <th>Usuario</th>
-                        <th>Nombres</th>
-                        <th>Apellidos</th>
-                        <th>Domicilio</th>
-                        <th>Correo</th>
-                        <th>Fecha de registro</th>
-                        <th>Ultima conexion</th>
-                        <th>Verificacion</th>
-                    </tr>
-                </thead>
+            <div class="table-container">
+                <table class="table is-fullwidth is-hoverable">
+                    <thead>
+                        <tr>
+                            <th>Vta</th>
+                            <th>Comprador</th>
+                            <th>Producto</th>
+                            <th>Cant</th>
+                            <th>Precio</th>
+                            <th>Total</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
 
-                <tbody>
-                        <?php include('php_include/abm/getUserABM.php'); ?>
-                </tbody>
-            </table>
+                    <tbody>
+                            <?php include('php_include/abm/getOrderABM.php'); ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
             
             

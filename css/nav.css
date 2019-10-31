@@ -9,6 +9,16 @@
     max-width: 100%;
 }
 
+.notification.is-danger{
+    margin: 0;
+    z-index: 99;
+    position: sticky;
+}
+
+.navbar.is-fixed-top{
+    position: sticky;
+}
+
 /* Formatting result items */
 .result a{
     margin: 0;
