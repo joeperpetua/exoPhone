@@ -66,7 +66,7 @@ require('php_config/connect.php');
             
         </div>
 
-        <div class="column is-full container is-active" data-content="3">
+        <div class="column is-full container" data-content="3">
         <table class="table is-fullwidth is-striped is-hoverable">
                 <thead>
                     <tr>
