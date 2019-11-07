@@ -43,7 +43,7 @@
     $pass = md5($_REQUEST['password']);
     
 
-    $sql = "SELECT user_alias, user_pass FROM user where user_alias = '$use' and user_pass = '$pass'";
+    $sql = "SELECT id_user, user_alias, user_pass FROM user where user_alias = '$use' and user_pass = '$pass'";
     $consulta = mysqli_query($connection,$sql);
  
     $registro = mysqli_fetch_assoc($consulta);
@@ -51,6 +51,7 @@
     if ($use == $registro['user_alias'] && $pass == $registro['user_pass']) {
         session_start();
         $_SESSION['user'] = $use;
+        $_SESSION['id_user'] =  $registro['id_user'];
         echo "<script>
           location.replace('index.php');
         </script>";
