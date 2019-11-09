@@ -106,6 +106,14 @@ document.addEventListener('DOMContentLoaded', () => {
       
   });
 
+  $('#tabs li').click(function() {
+    var tab = $(this).data('tab');
+    $('#tabs li').removeClass('is-active');
+    $(this).addClass('is-active');
+    $('#body div').removeClass('is-active');
+    $('div[data-content="' + tab + '"]').addClass('is-active');
+  });
+
 
   $('.search-box input[type="text"]').on("keyup input", function(){
     /* Get input value on change */
