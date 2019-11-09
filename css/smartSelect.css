@@ -14,6 +14,10 @@
     .res{
         max-width: 60%;
     }
+
+    .prevNext{
+        padding: 0 20%;
+    }
 }
 
 

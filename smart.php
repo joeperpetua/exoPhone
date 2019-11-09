@@ -36,7 +36,7 @@
 
 </div>
 
-<section class="section">
+<section class="section" id="section">
 
     <div class="tabs is-toggle" id="tabs">
         <ul>
@@ -52,18 +52,34 @@
             <li data-tab="10"><a>Pregunta 10</a></li>
         </ul>
     </div>
-    <div class="box">
+    <div class="box" id="box">
+
         <div class="columns is-multiline is-centered" style="overflow: auto; max-height: 100%;">
-            
-            <?php
-                include('php_include/getSmartForm.php');
-            ?>
+                <?php
+                    include('php_include/getSmartForm.php');
+                ?>
+        </div>
+
+    </div>
+
+    <div class="columns is-mobile is-centered prevNext">
         
- 
-            
-        <?php
-            include('php_include/getSelection.php');
-        ?>
+        <div class="column is-half">
+            <a class="button" data-btn="prev" id="prev"><i class="fas fa-arrow-left"></i></a>
+        </div>
+
+        <div class="column is-half">
+            <a class="button is-pulled-right" data-btn="next" id="next"><i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+    
+    <input type="submit" value="Finalizar" name="guess" id="send" class="button is-primary is-medium guess is-hidden">
+    
+    </form> 
+    
+    <?php
+        include('php_include/getSelection.php');
+    ?>
 
 </section>
 
@@ -77,6 +93,7 @@
 <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery.localscroll@2.0.0/jquery.localScroll.min.js"></script>
 <script type="text/javascript" src="js/nav.js"></script>
+
 
 </body>
 </html>

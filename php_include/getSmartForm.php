@@ -1,3 +1,5 @@
+
+
 <form action="" method="post" enctype="multipart/form-data" id="body">
 
             <div class="container is-active" data-content="1">
@@ -119,16 +121,14 @@
                 <ul>
                     <li><input type="number" value="0" min="0" max="999999" name="p10" class="input" required></li><br>
                 </ul>
-                
+
             </div>
-        
             <br><br>
 
-        </div>
-    </div>
+
+
         
-        <input type="submit" value="Finalizar" name="guess" id="send" class="button is-primary is-medium guess">
-    </form> 
+
 
 
 

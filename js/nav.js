@@ -71,17 +71,40 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   
+  var tab = 1;
 
-  $('#tabs li').click(function() {
-    var tab = $(this).data('tab');
+  $('#section a').click(function() {
+    var value = $(this).data('btn');
+    
+      if (value === 'prev' && tab > 1) {
+        tab--;
+        $('a[data-btn="next"]').removeClass('is-hidden');
+        $('input[id="send"]').addClass('is-hidden');
+      }
+  
+      if (value === 'next' && tab < 10) {
+        tab++;
+        $('a[data-btn="prev"]').removeClass('is-hidden');
+        $('input[id="send"]').addClass('is-hidden');
+      }
 
-    $('#tabs li').removeClass('is-active');
-    $(this).addClass('is-active');
+      if(tab === 1){
+        $('a[data-btn="prev"]').addClass('is-hidden');
+      }
 
-    $('#body div').removeClass('is-active');
-    $('div[data-content="' + tab + '"]').addClass('is-active');
+      if(tab === 10){
+        $('a[data-btn="next"]').addClass('is-hidden');
+        $('input[id="send"]').removeClass('is-hidden');
+      }
+
+
+      $('#body div').removeClass('is-active');
+      $('div[data-content="' + tab + '"]').addClass('is-active');
+
+      $('#tabs li').removeClass('is-active');
+      $('li[data-tab="' + tab + '"]').addClass('is-active');
+      
   });
-
 
 
   $('.search-box input[type="text"]').on("keyup input", function(){
