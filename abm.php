@@ -1,6 +1,5 @@
 <?php
-
-require('php_config/connect.php');
+    require('php_config/connect.php');
 ?>
 
 <!DOCTYPE html>
@@ -24,77 +23,85 @@ require('php_config/connect.php');
 
 <?php
     include('include/nav.php');
+    
+    if ($_SESSION['user'] == 'admin') {
+?>
+        <section class="section">
+            <p class="title abm">ABM <a href="add_product.php" class="button is-pulled-right"><i class="fas fa-plus"></i></a></p>
+            <div class="tabs is-toggle" id="tabs">
+                <ul>
+                    <li class="is-active" data-tab="1"><a>Equipos</a></li>
+                    <li data-tab="2"><a>Usuarios</a></li>
+                    <li data-tab="3"><a>Ventas</a></li>
+                </ul>
+            </div>
+            <div class="box" id="body">
+                <div class="columns is-multiline" style="overflow: auto; max-height: 100%;">
+
+                <div class="column is-full container is-active" data-content="1">
+                    <?php
+                        include('php_include/abm/getItemDelete.php');
+                    ?>
+                </div>
+
+                <div class="is-full container" data-content="2">
+                    <div class="table-container">
+                        <table class="table is-fullwidth is-striped is-hoverable">
+                            <thead>
+                                <tr>
+                                    <th>Usuario</th>
+                                    <th>Nombres</th>
+                                    <th>Apellidos</th>
+                                    <th>Domicilio</th>
+                                    <th>Correo</th>
+                                    <th>Fecha de registro</th>
+                                    <th>Ultima conexion</th>
+                                    <th>Verificacion</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                    <?php include('php_include/abm/getUserABM.php'); ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="column is-full container" data-content="3">
+                    <div class="table-container">
+                        <table class="table is-fullwidth is-hoverable">
+                            <thead>
+                                <tr>
+                                    <th>Vta</th>
+                                    <th>Comprador</th>
+                                    <th>Producto</th>
+                                    <th>Cant</th>
+                                    <th>Precio</th>
+                                    <th>Total</th>
+                                    <th>Fecha</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                    <?php include('php_include/abm/getOrderABM.php'); ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                    
+                    
+                    
+                </div>
+            </div>
+
+        </section>
+<?php
+    }else{
+        echo '<h1 class="title">Por favor ingresar como administrador</h1>';
+    }
 ?>
 
-<section class="section">
-    <p class="title abm">ABM <a href="add_product.php" class="button is-pulled-right"><i class="fas fa-plus"></i></a></p>
-    <div class="tabs is-toggle" id="tabs">
-        <ul>
-            <li class="is-active" data-tab="1"><a>Equipos</a></li>
-            <li data-tab="2"><a>Usuarios</a></li>
-            <li data-tab="3"><a>Ventas</a></li>
-        </ul>
-    </div>
-    <div class="box" id="body">
-        <div class="columns is-multiline" style="overflow: auto; max-height: 100%;">
 
-        <div class="column is-full container is-active" data-content="1">
-            <?php
-                include('php_include/abm/getItemDelete.php');
-            ?>
-        </div>
-
-        <div class="is-full container" data-content="2">
-            <div class="table-container">
-                <table class="table is-fullwidth is-striped is-hoverable">
-                    <thead>
-                        <tr>
-                            <th>Usuario</th>
-                            <th>Nombres</th>
-                            <th>Apellidos</th>
-                            <th>Domicilio</th>
-                            <th>Correo</th>
-                            <th>Fecha de registro</th>
-                            <th>Ultima conexion</th>
-                            <th>Verificacion</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                            <?php include('php_include/abm/getUserABM.php'); ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="column is-full container" data-content="3">
-            <div class="table-container">
-                <table class="table is-fullwidth is-hoverable">
-                    <thead>
-                        <tr>
-                            <th>Vta</th>
-                            <th>Comprador</th>
-                            <th>Producto</th>
-                            <th>Cant</th>
-                            <th>Precio</th>
-                            <th>Total</th>
-                            <th>Fecha</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                            <?php include('php_include/abm/getOrderABM.php'); ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-            
-            
-            
-        </div>
-    </div>
-
-</section>
 
 
 
