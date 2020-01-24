@@ -38,7 +38,7 @@
 
 <section class="section" id="section">
 
-    <div class="tabs is-toggle">
+    <div class="tabs is-toggle is-hidden-mobile">
         <ul>
             <li class="is-active" data-tab="1"><a>Pregunta 1</a></li>
             <li data-tab="2"><a>Pregunta 2</a></li>
