@@ -6,19 +6,19 @@
         if(isset($_COOKIE['user'])){
             echo '<div>
                     <label class="label">Nombre de usuario</label>
-                    <input name="user" type="text" class="input" placeholder="@userexample" value="'. $_COOKIE['usuario'] .'" required>
+                    <input name="user" type="text" class="input" placeholder="@userexample" value="'. $_COOKIE['usuario'] .'" autocomplete="username" required>
                   </div><br>';
         }else{
             echo '<div>
                     <label class="label">Nombre de usuario</label>
-                    <input name="user" type="text" class="input" placeholder="@userexample" required>
+                    <input name="user" type="text" class="input" placeholder="@userexample" autocomplete="username" required>
                   </div><br>';
         }
     ?>
 
     <div class="field">
         <label class="label">Contraseña</label>
-        <input type="password" name="password" placeholder="password" class="input" pattern=".{6,}">
+        <input type="password" name="password" autocomplete="current-password" placeholder="password" class="input" pattern=".{6,}">
     </div>
 
     <div class="field">

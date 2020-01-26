@@ -5,10 +5,8 @@ require('php_config/connect.php');
 session_start();
 if (isset($_SESSION['user'])) {
     echo "<script>
-          console.log('sesion iniciada');
           var session = 1;
           var user = '".$_SESSION['user']."';
-          console.log('".$_SESSION['id_user']."');
         </script>"; 
 
   $sqlV = "SELECT user_is_verified FROM user WHERE id_user =".$_SESSION['id_user'];
@@ -27,7 +25,6 @@ if (isset($_SESSION['user'])) {
 
 }else {
     echo "<script>
-          console.log('sesion no iniciada');
           var session = 0;
         </script>";
   }
